@@ -306,6 +306,13 @@ select.nonappear {
   line-height: 20px;
 }
 
+@media (max-width: 1680px) {
+  .objects-list .object-grid .grided.sopr {
+    overflow: hidden;
+    height: 58px;
+  }
+}
+
 .objects-list .object-grid .grided.squared {
   display: -ms-grid;
   display: grid;
@@ -374,6 +381,13 @@ select.nonappear {
 
 .objects-list .comp-name {
   color: #0C829C;
+}
+
+@media (max-width: 1680px) {
+  .objects-list .expanded .grided.sopr {
+    overflow: initial;
+    height: auto;
+  }
 }
 
 .object-detail {

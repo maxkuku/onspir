@@ -265,6 +265,13 @@ select.nonappear {
             line-height: 20px;
         }
 
+        @media (max-width: 1680px) {
+            .grided.sopr {
+                overflow: hidden;
+                height: 58px;
+            }
+        }
+
         .grided.squared {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -324,7 +331,14 @@ select.nonappear {
     .comp-name {
         color: #0C829C;
     }
-    
+    .expanded {
+        @media (max-width: 1680px) {
+            .grided.sopr {
+                overflow: initial;
+                height: auto;
+            }
+        } 
+    }
 }
 
 .object-detail {
@@ -462,8 +476,10 @@ select.nonappear {
     }
 }
 
-.expanded .column {
-    .sub-nav-item {
-        padding: 5px 15px;
+.expanded {
+    .column {
+        .sub-nav-item {
+            padding: 5px 15px;
+        }
     }
 }
