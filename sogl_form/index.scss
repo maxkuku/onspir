@@ -238,7 +238,7 @@ select.nonappear {
 
                 a {
                     display: block;
-                    margin-bottom: 10px;
+                    margin-bottom: 70px;
                     float: left;
                 }
 
@@ -539,6 +539,13 @@ select.nonappear {
     .column {
         .sub-nav-item {
             padding: 5px 15px;
+        }
+    }
+    .grided {
+        &.last {
+            a {
+                margin-bottom: 10px;
+            }
         }
     }
 }
