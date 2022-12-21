@@ -1,0 +1,167 @@
+:root[data-theme="light"] {
+    //общие
+    --background-color: #f5f5f5;
+    --background-loader-color: #2030b8;
+    --text-color: #000;
+    --light-text-color: rgba(105, 98, 98, 0.8);
+  
+    //хедер
+    --logo-shadow-color: rgba(0, 0, 0, 0.5);
+    --search-text-color: #444444;
+    --search-icon-color: #444444;
+    --nav-text-color: rgba(105, 98, 98, 0.8);
+    --nav-active-text-color: #333;
+    --gradient-shadow-background: linear-gradient(
+      0deg,
+      rgba(68, 68, 68, 0.2) 0%,
+      rgba(129, 129, 129, 0) 90%
+    );
+    --gradient-active-shadow-background: linear-gradient(
+      180deg,
+      rgba(68, 68, 68, 0.2) 0%,
+      rgba(58, 57, 57, 0.012) 85%
+    );
+  
+    //новости
+    --news-title-color: #444444;
+    --news-text-color: #000;
+  
+    //задачи
+    --tasks-title-color: #444444;
+    --tasks-color: #444444; // не просроченная не выполненная
+    --tasks-checked-color: #928f8f; // не просроченная выполненная
+    --tasks-overdue-checked-color: #e88484; // просроченная задача
+    --tasks-mobile-bg-color: rgba(255, 255, 255, 0.7);
+    --tasks-mobile-calendar-icon-bg: none;
+  
+    //рейтинг
+    --rating-range-slider-color: #444444;
+    --rating-range-like-icon: url("../../assets/NewDesign/rating/like-light.svg");
+    --rating-range-star-icon: url("../../assets/NewDesign/rating/star-light.svg");
+    --rating-range-bonus-icon: url("../../assets/NewDesign/rating/bonus-light.svg");
+  
+    --mobile-rating-range-like-icon: url("../../assets/NewDesign/rating/mobile-like-light.svg");
+    --mobile-rating-range-star-icon: url("../../assets/NewDesign/rating/mobile-star-light.svg");
+    --mobile-rating-range-bonus-icon: url("../../assets/NewDesign/rating/mobile-bonus-light.svg");
+  
+    //виджеты
+    --widget-folder-border-color: #444444;
+    --widget-folder-title-color: #605d5d;
+  
+    //календарь
+    --calendar-month-color: #444444;
+    --calendar-text-color: #605d5d;
+  
+    //интерактивные линии
+    --active-waves-url: url(../../assets/NewDesign/active-waves-black.svg);
+  
+    //настройки
+    --waves-color: black;
+  
+    //маркет
+    --button-bg: radial-gradient(
+      106.45% 2212.37% at 11.94% 32.35%,
+      rgba(68, 68, 68, 0.29) 0%,
+      rgba(68, 68, 68, 0.65) 100%
+    );
+    --button-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+  
+    --font-family-clock: "Advent Pro", sans-serif;
+  }
+  
+  :root[data-theme="dark"] {
+    //общие
+    --background-color: #0d0f1c;
+    --background-loader-color: #fff;
+    --text-color: #fff;
+    --light-text-color: #d9d9d9;
+  
+    //хедер
+    --logo-shadow-color: #fff;
+    --search-text-color: #fff;
+    --search-icon-color: #d9d9d9;
+    --nav-text-color: #696262;
+    --nav-active-text-color: #d9d9d9;
+    --gradient-shadow-background: linear-gradient(
+      0deg,
+      rgba(217, 217, 217, 0.2) 0%,
+      rgba(129, 129, 129, 0) 90%
+    );
+    --gradient-active-shadow-background: linear-gradient(
+      180deg,
+      rgba(217, 217, 217, 0.2) 0%,
+      rgba(58, 57, 57, 0.012) 85%
+    );
+  
+    //новости
+    --news-title-color: #928f8f;
+    --news-text-color: #d9d9d9;
+  
+    //задачи
+    --tasks-title-color: #c8c2c2;
+    --tasks-color: #d9d9d9;
+    --tasks-checked-color: #928f8f;
+    --tasks-mobile-bg-color: rgb(76 72 72 / 38%);
+    --tasks-mobile-calendar-icon-bg: radial-gradient(
+      84.29% 104.49% at 20% 15.71%,
+      #dde1e1 0%,
+      rgba(250, 255, 255, 0) 100%
+    );
+  
+    //рейтинг
+    --rating-range-slider-color: #d9d9d9;
+    --rating-range-like-icon: url("../../assets/NewDesign/rating/like-dark.svg");
+    --rating-range-star-icon: url("../../assets/NewDesign/rating/star-dark.svg");
+    --rating-range-bonus-icon: url("../../assets/NewDesign/rating/bonus-dark.svg");
+  
+    --mobile-rating-range-like-icon: url("../../assets/NewDesign/rating/mobile-like-light.svg");
+    --mobile-rating-range-star-icon: url("../../assets/NewDesign/rating/mobile-star-light.svg");
+    --mobile-rating-range-bonus-icon: url("../../assets/NewDesign/rating/mobile-bonus-light.svg");
+  
+    //виджеты
+    --widget-folder-border-color: #d9d9d9;
+    --widget-folder-title-color: #d9d9d9;
+  
+    //календарь
+    --calendar-month-color: #d9d9d9;
+    --calendar-text-color: #d9d9d9;
+  
+    //интерактивные линии
+    --active-waves-url: url(../../assets/NewDesign/active-waves-white.svg);
+  
+    //настройки
+    --waves-color: white;
+  
+    //маркет
+    --button-bg: radial-gradient(
+      106.45% 2212.37% at 11.94% 32.35%,
+      rgba(255, 255, 255, 0.85) 0%,
+      rgba(217, 217, 217, 0.68) 100%
+    );
+    --button-box-shadow: 0px 4px 6px #797979;
+  
+    --font-family-clock: "Advent Pro", sans-serif;
+  }
+  
+  $font-family: "Ubuntu", sans-serif;
+  
+  //market font-size
+  $font-size-big: 18px;
+  $font-size-middle: 15px;
+  $font-size-little: 14px;
+  
+  $height_header_s: 50px;
+  
+  //$width_menu_sm: ;
+  $width_menu_m: 200px;
+  $width_menu_ml: 230px;
+  $width_menu_l: 270px;
+  
+  $breakpoint_xs: 400px;
+  $breakpoint_xs-m: 550px;
+  $breakpoint_s: 768px;
+  $breakpoint_sm: 950px;
+  $breakpoint_m: 1024px;
+  $breakpoint_ml: 1150px;
+  $breakpoint_l: 1440px;
+  

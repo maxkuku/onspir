@@ -1,0 +1,314 @@
+
+:root[data-theme=light] {
+    --background-color: #f5f5f5;
+    --background-loader-color: #2030b8;
+    --text-color: #000;
+    --light-text-color: hsla(0,3%,40%,.8);
+    --logo-shadow-color: rgba(0,0,0,.5);
+    --search-text-color: #444;
+    --search-icon-color: #444;
+    --nav-text-color: hsla(0,3%,40%,.8);
+    --nav-active-text-color: #333;
+    --gradient-shadow-background: linear-gradient(0deg,rgba(68,68,68,.2),hsla(0,0%,51%,0) 90%);
+    --gradient-active-shadow-background: linear-gradient(180deg,rgba(68,68,68,.2),rgba(58,57,57,.012) 85%);
+    --news-title-color: #444;
+    --news-text-color: #000;
+    --tasks-title-color: #444;
+    --tasks-color: #444;
+    --tasks-checked-color: #928f8f;
+    --tasks-overdue-checked-color: #e88484;
+    --tasks-mobile-bg-color: hsla(0,0%,100%,.7);
+    --tasks-mobile-calendar-icon-bg: none;
+    --rating-range-slider-color: #444;
+    --rating-range-like-icon: url(images/like-light.svg);
+    --rating-range-star-icon: url(images/star-light.svg);
+    --rating-range-bonus-icon: url(images/bonus-light.svg);
+    --mobile-rating-range-like-icon: url(images/mobile-like-light.svg);
+    --mobile-rating-range-star-icon: url(images/mobile-star-light.svg);
+    --mobile-rating-range-bonus-icon: url(images/mobile-bonus-light.svg);
+    --widget-folder-border-color: #444;
+    --widget-folder-title-color: #605d5d;
+    --calendar-month-color: #444;
+    --calendar-text-color: #605d5d;
+    --active-waves-url: url(images/active-waves-black.svg);
+    --waves-color: #000;
+    --button-bg: radial-gradient(106.45% 2212.37% at 11.94% 32.35%,rgba(68,68,68,.29) 0%,rgba(68,68,68,.65) 100%);
+    --button-box-shadow: 0px 4px 6px rgba(0,0,0,.25);
+    --font-family-clock: "Advent Pro",sans-serif;
+}
+body {
+    background-color: #F5F5F5;
+    font-family: Ubuntu;
+    color: #444;
+}
+.clock-round g {
+    fill: none;
+}
+.Header {
+    align-items: center;
+    display: flex;
+    gap: 35px;
+    height: 80px;
+    max-width: 1780px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+.header-field {
+    align-items: center;
+    border-bottom: 1px solid gray;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 100%;
+    margin-left: 20px;
+    width: calc(70% - 20px);
+}
+
+div, select {
+    outline: none;
+}
+.Logo {
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    justify-content: flex-start;
+}
+.Search {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 20%;
+}
+.Nav {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    grid-area: Nav;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.Clock-big {
+    height: 100px;
+    margin-top: 10px;
+    position: relative;
+    width: 100px;
+    z-index: 0;
+}
+@media (min-width: 551px) and (max-width: 1440px) {
+    .Clock-big {
+        height: 75px;
+        margin-top: 5px;
+        width: 75px;
+    }
+}
+.main {
+    height: calc(100% - 80px);
+    margin-top: 80px;
+    max-width: 1780px;
+    position: relative;
+    width: 100%;
+}
+.logo__img {
+    -webkit-filter: drop-shadow(0 0 10px #00000080);
+    filter: drop-shadow(0 0 10px #00000080);
+    height: 30px;
+    width: 30px;
+}
+.logo__name {
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg,#d5d0d0 0,#393939);
+    -webkit-background-clip: text;
+    font-size: 14px;
+    font-weight: 300;
+}
+.Search-field {
+    position: relative;
+    margin-left: 0;
+}
+.Search-field__input {
+    background: hsla(240,5%,66%,.24);
+    border-radius: 10px;
+    color: #444;
+    height: 32px;
+    padding: 0 30px;
+    width: 100%;
+}
+input {
+    outline: none;
+}
+input, textarea {
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: inherit;
+}
+.Search-field__icon {
+    position: absolute;
+}
+.magnifier {
+    left: 8px;
+    top: 8px;
+}
+.microphone {
+    right: 8px;
+    top: 8px;
+}
+.volume-button {
+    grid-gap: 0 0;
+    align-items: center;
+    display: grid;
+    gap: 0 0;
+    grid-template-areas:
+        "navShadow"
+        "navButton";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,1fr);
+    height: 70px;
+    padding-bottom: 20px;
+    -webkit-perspective: 100px;
+    perspective: 100px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.Nav_item {
+    color: #696363cc;
+    font-size: 14px;
+    grid-area: navButton;
+    padding: 5px 15px;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+.Nav_item {
+    font-size: 12px;
+    line-height: 25px;
+    padding: 0 7px;
+}
+}
+.Nav_item:hover, .Nav_item_active {
+    background: linear-gradient(180deg,rgba(68,68,68,.2),rgba(58,57,57,.012) 85%);
+    background-size: 90%;
+    border-radius: 0 0 5px 5px;
+    color: #333;
+}
+.Nav_item:first-of-type {
+    order: 2;
+}
+.gradient-shadow {
+    background: linear-gradient(0deg,rgba(68,68,68,.2),hsla(0,0%,51%,0) 90%);
+    grid-area: navShadow;
+    height: 25px;
+    opacity: 0;
+    -webkit-transform: rotateX(45deg);
+    transform: rotateX(45deg);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+.gradient-shadow:nth-of-type(2) {
+    order: 1;
+}
+.Nav_item:hover+.gradient-shadow, .Nav_item_active+.gradient-shadow {
+    opacity: 1;
+}
+.Clock-big {
+    height: 100px;
+    margin-top: 10px;
+    position: relative;
+    width: 100px;
+    z-index: 0;
+}
+@media (min-width: 551px) and (max-width: 1440px) {
+.Clock-big {
+    height: 75px;
+    margin-top: 5px;
+    width: 75px;
+}
+}
+.clock__title__field {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 25%;
+    width: 100%;
+}
+@media (min-width: 551px) and (max-width: 1440px) {
+.clock__title__field {
+    top: 15%;
+}
+}
+.clock {
+    align-items: center;
+    bottom: 30%;
+    color: var(--tasks-title-color);
+    display: flex;
+    flex-direction: row;
+    font-family: var(--font-family-clock);
+    font-size: 22px;
+    gap: 7px;
+    justify-content: center;
+    line-height: 24px;
+    position: absolute;
+    width: 100%;
+}
+@media (min-width: 551px) and (max-width: 1440px){
+.clock {
+    bottom: 25%;
+    font-size: 18px;
+    line-height: 22px;
+}
+}
+.Clock-big svg {
+    height: 100px;
+    width: 100px;
+}
+
+.clock-round {
+    position: absolute;
+}
+@media (min-width: 551px) and (max-width: 1440px){
+.Clock-big svg {
+    height: 75px;
+    width: 75px;
+}
+}
+.clock__title {
+    color: #d9d9d9;
+    font-size: 6px;
+    font-weight: 400;
+    line-height: 8px;
+    text-align: center;
+    width: 80%;
+}
+@media (min-width: 551px) and (max-width: 1440px) {
+.clock__title {
+    width: 70%;
+}
+}
+.hours, .minutes {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    height: 100%;
+}
+.tick {
+    color: var(--tasks-title-color);
+    font-family: var(--font-family-clock);
+    font-weight: 400;
+}
+.number {
+    color: var(--tasks-title-color);
+    font-family: var(--font-family-clock);
+    font-weight: 400;
+}
+.lock-icon {
+    margin: 0 20px 0 auto;
+}
+
+.Header {
+    position: relative!important;
+}
+.main {
+    position: relative!important;
+}

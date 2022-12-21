@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Согласование</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="Header">
+        <div class="header-field">
+            <div class="Logo"><img class="logo__img" src="logo.png" alt="Logo">
+                <p class="logo__name">OnSpirit</p>
+            </div>
+            <div class="Search">
+                <div class="Search-field" style="margin-left: 0px;"><input class="Search-field__input" type="text"
+                        name="categories" placeholder="Поиск" autocomplete="off">
+                    <div class="Search-field__icon magnifier"><svg width="16" height="16" viewBox="0 0 16 16"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.3833 12.8767C7.76953 12.8767 9.04785 12.4285 10.0938 11.6814L14.0283 15.616C14.2109 15.7986 14.4517 15.8899 14.709 15.8899C15.2485 15.8899 15.6304 15.4749 15.6304 14.9436C15.6304 14.6946 15.5474 14.4539 15.3647 14.2795L11.4551 10.3616C12.2769 9.28247 12.7666 7.94604 12.7666 6.49341C12.7666 2.98218 9.89453 0.110107 6.3833 0.110107C2.88037 0.110107 0 2.97388 0 6.49341C0 10.0046 2.87207 12.8767 6.3833 12.8767ZM6.3833 11.4988C3.64404 11.4988 1.37793 9.23267 1.37793 6.49341C1.37793 3.75415 3.64404 1.48804 6.3833 1.48804C9.12256 1.48804 11.3887 3.75415 11.3887 6.49341C11.3887 9.23267 9.12256 11.4988 6.3833 11.4988Z"
+                                fill="#444444"></path>
+                        </svg></div>
+                    <div class="Search-field__icon microphone"><svg width="12" height="18" viewBox="0 0 12 18"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.06494 11.7227C7.7168 11.7227 8.8291 10.4858 8.8291 8.71777V3.16455C8.8291 1.38818 7.7168 0.159668 6.06494 0.159668C4.40479 0.159668 3.29248 1.38818 3.29248 3.16455V8.71777C3.29248 10.4858 4.40479 11.7227 6.06494 11.7227ZM0.121582 8.85059C0.121582 12.1045 2.27148 14.3872 5.43408 14.6528V16.5869H2.35449C2.00586 16.5869 1.72363 16.8691 1.72363 17.2178C1.72363 17.5664 2.00586 17.8403 2.35449 17.8403H9.76709C10.1157 17.8403 10.3979 17.5664 10.3979 17.2178C10.3979 16.8691 10.1157 16.5869 9.76709 16.5869H6.6875V14.6528C9.8584 14.3872 12 12.1045 12 8.85059V7.16553C12 6.81689 11.7261 6.54297 11.3774 6.54297C11.0288 6.54297 10.7466 6.81689 10.7466 7.16553V8.80078C10.7466 11.6313 8.90381 13.5073 6.06494 13.5073C3.21777 13.5073 1.375 11.6313 1.375 8.80078V7.16553C1.375 6.81689 1.10107 6.54297 0.744141 6.54297C0.395508 6.54297 0.121582 6.81689 0.121582 7.16553V8.85059Z"
+                                fill="#444444"></path>
+                        </svg></div>
+                </div>
+            </div>
+            <div class="Nav">
+                <div class="volume-button">
+                    <div class="nav-item  nav-item_active">Главная</div>
+                    <div class="gradient-shadow"></div>
+                </div>
+                <div class="volume-button" id="widgets-in-header">
+                    <div class="nav-item  ">Виджеты</div>
+                    <div class="gradient-shadow"></div>
+                </div>
+                <div class="volume-button">
+                    <div class="nav-item  ">Чаты</div>
+                    <div class="gradient-shadow"></div>
+                </div>
+                <div class="volume-button">
+                    <div class="nav-item  ">Лента</div>
+                    <div class="gradient-shadow"></div>
+                </div>
+                <div class="volume-button">
+                    <div class="nav-item">Почта</div>
+                    <div class="gradient-shadow"></div>
+                </div>
+                <div class="volume-button">
+                    <div class="nav-item  ">Профиль</div>
+                    <div class="gradient-shadow"></div>
+                </div>
+                <div class="volume-button">
+                    <div class="nav-item  ">Настройки</div>
+                    <div class="gradient-shadow"></div>
+                </div>
+                <div class="volume-button">
+                    <div class="nav-item  ">login Инженер ПТО</div>
+                    <div class="gradient-shadow"></div>
+                </div>
+            </div>
+        </div>
+        <div class="Clock-big">
+            <div class="clock__title__field">
+                <p class="clock__title clock__title-big">До конца рабочего дня осталось:</p>
+            </div>
+            <div class="clock clock-big">
+                <div class="hours">
+                    <div class="number-box second">
+                        <div class="number number-big">4</div>
+                    </div>
+                </div>
+                <div class="tick tick-big">:</div>
+                <div class="minutes">
+                    <div class="number-box first">
+                        <div class="number number-big">4</div>
+                    </div>
+                    <div class="number-box second">
+                        <div class="number number-big">2</div>
+                    </div>
+                </div>
+            </div><svg width="100" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" class="clock-round">
+                <defs>
+                    <filter id="blur">
+                        <feGaussianBlur stdDeviation="7"></feGaussianBlur>
+                    </filter>
+                </defs>
+                <g transform="translate(110,110)" stroke-linecap="round">
+                    <circle r="100" class="e-c-base"></circle>
+                    <g transform="rotate(-90)" stroke-linecap="round">
+                        <circle r="100" class="e-c-progress"
+                            style="stroke-dasharray: 628.319; stroke-dashoffset: -300.512;"></circle>
+                        <g id="e-pointer" style="transform: rotate(172.181deg);">
+                            <circle cx="100" cy="0" r="20" class="e-c-pointer" filter="url(#blur)"></circle>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div><svg width="20" height="23" viewBox="0 0 25 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+            class="lock-icon">
+            <path
+                d="M12.5003 19.3334C13.3057 19.3334 13.9587 18.7364 13.9587 18C13.9587 17.2636 13.3057 16.6667 12.5003 16.6667C11.6949 16.6667 11.042 17.2636 11.042 18C11.042 18.7364 11.6949 19.3334 12.5003 19.3334Z"
+                fill="#928F8F"></path>
+            <path
+                d="M19.7923 8.66669H9.58398V6.00002C9.58398 5.29278 9.89128 4.6145 10.4383 4.1144C10.9852 3.6143 11.7271 3.33335 12.5007 3.33335C13.2742 3.33335 14.0161 3.6143 14.563 4.1144C15.11 4.6145 15.4173 5.29278 15.4173 6.00002C15.4173 6.35364 15.571 6.69278 15.8445 6.94283C16.1179 7.19288 16.4889 7.33335 16.8757 7.33335C17.2624 7.33335 17.6334 7.19288 17.9068 6.94283C18.1803 6.69278 18.334 6.35364 18.334 6.00002C18.334 4.58553 17.7194 3.22898 16.6254 2.22878C15.5315 1.22859 14.0477 0.666687 12.5007 0.666687C10.9536 0.666687 9.46982 1.22859 8.37586 2.22878C7.2819 3.22898 6.66732 4.58553 6.66732 6.00002V8.66669H5.20898C4.04866 8.66669 2.93586 9.08811 2.11539 9.83826C1.29492 10.5884 0.833984 11.6058 0.833984 12.6667V23.3334C0.833984 24.3942 1.29492 25.4116 2.11539 26.1618C2.93586 26.9119 4.04866 27.3334 5.20898 27.3334H19.7923C20.9526 27.3334 22.0654 26.9119 22.8859 26.1618C23.7064 25.4116 24.1673 24.3942 24.1673 23.3334V12.6667C24.1673 11.6058 23.7064 10.5884 22.8859 9.83826C22.0654 9.08811 20.9526 8.66669 19.7923 8.66669ZM12.5007 22C11.6354 22 10.7895 21.7654 10.07 21.3259C9.35057 20.8864 8.78981 20.2617 8.45868 19.5308C8.12754 18.7998 8.0409 17.9956 8.20971 17.2197C8.37852 16.4437 8.7952 15.731 9.40706 15.1716C10.0189 14.6122 10.7985 14.2312 11.6471 14.0769C12.4958 13.9225 13.3755 14.0018 14.1749 14.3045C14.9743 14.6073 15.6576 15.1199 16.1383 15.7777C16.6191 16.4355 16.8757 17.2089 16.8757 18C16.8757 19.0609 16.4147 20.0783 15.5942 20.8284C14.7738 21.5786 13.661 22 12.5007 22Z"
+                fill="#928F8F"></path>
+        </svg>
+    </div>
+
+
+    <div class="main">
+
+        <div class="page-header">
+            <h1>Согласование счетов</h1>
+            <input type="text" name="chooze_date" id="chooze_date" placeholder="выбрать дату">
+            <button class="active">Согласовант</button>
+            <span>/</span>
+            <button>Инициатор</button>
+        </div>
+
+
+
+        <div class="sided-big">
+            <div class="sides paired">
+                <div class="sided-small">
+                    <div>
+                        <div class="sub-page-menu">
+        
+                            <div class="sub-volume-button">
+                                <div class="sub-nav-item active">На согласование</div>
+                                <div class="sub-gradient-shadow"></div></div>
+                            <div class="sub-volume-button">
+                                <div class="sub-nav-item">Оплаченные счета</div>
+                                <div class="sub-gradient-shadow"></div></div>
+                            <div class="sub-volume-button">
+                                <div class="sub-nav-item">Архив счетов</div>
+                                <div class="sub-gradient-shadow"></div></div>
+                            <div class="sub-volume-button">
+                                <div class="sub-nav-item">Согласованные</div>
+                                <div class="sub-gradient-shadow"></div></div>
+                            <div class="sub-volume-button">
+                                <div class="sub-nav-item">На доработке</div>
+                                <div class="sub-gradient-shadow"></div></div>
+                            <div class="sub-volume-button">
+                                <div class="sub-nav-item">Отклоненные счета</div>
+                                <div class="sub-gradient-shadow"></div></div>
+                
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <select name="filter" class="nonappear" id="filter_option">
+                            <option value="">Фильтр</option>
+                            <option value="1">Опция 1</option>
+                            <option value="2">Опция 2</option>
+                            <option value="3">Опция 3</option>
+                            <option value="4">Опция 4</option>
+                            <option value="5">Опция 5</option>
+                        </select>
+                    </div>
+                    <input class="hidet" type="text" id="word_search" name="word_search" placeholder="Поиск по слову">
+                </div>
+        
+        
+                
+                <div class="objects-list">
+
+
+
+                    <div class="object-item expanded">
+                        <div class="object-inner expanded">
+                            <div class="object-grid">
+                                <div class="object-full">
+                                    <div class="object-grid-five">
+                                        <div class="grided">Объект</div>
+                                        <div class="grided">
+                                            <span class="comp-name">ООО ВЕГА</span>    
+                                            <span>(СС)</span>
+                                        </div> 
+                                        <div class="grided">156 221,01 </div>
+                                        
+                                        <div class="grided">ИП Петров-Иванов Всеволод Петрович</div>
+                                        <div class="grided">№ <span class="ob-num">2345</span> <span class="ob-date">17.12.2022</span></div>
+                                    </div>
+                                </div>
+                                <div class="object-full-line"></div>
+                                <div class="grided squared">
+                                    <div class="green">Заявка #77898 от 01.12.2022 г.</div>
+                                    <div class="snab">Снабжение
+                                        <span>Мокров Сергей</span></div>
+                                    <div>Электроинструменты</div>
+                                    <div class="comment">Комментарии</div>
+                                </div>
+                                <div class="grided sopr">Здравствуйте! Прошу согласовать цены закупки ЛКМ у МО-10 в Тамани, КП во влож. Сравнительная таблица с ценами ВМП и МО-10 прилагается. Объем указанный в КП соответствует уже полученному.</div>
+                                <div class="grided last">
+                                    <img src="list.png" alt="Список"><img src="document.png" alt="Документ">
+                                    <div class="classok">OK</div>
+                                </div>
+                            </div>
+
+                            <div class="object-detail">
+                                <div class="ob-params">
+                                    <div><span>Дата и отметка времени: </span><span>15.12.2022 в 18:40</span></div>
+                                    <div><span>Статья затрат: </span><span>Услуги</span></div>
+                                    <div><span>Отметка согласования: </span><span>В почте</span></div>
+                                    <div><span>Инициатор: </span><span>Снабжение - Иванов Иван</span></div>
+                                    <div><span>Дата и номер счета: </span><span>№23-234 от 12.12.2022</span></div>
+                                    <div><span>Дата оплаты: </span><span>23.12.2022</span></div>
+                                    <div><span>Договор-основание: </span><span>№111-333 РПА</span></div>
+                                    <div><span>Шифр документа: </span><span>44-55-666</span></div>
+                                </div>
+                                <div class="ob-docs">
+                                    <div class="ob-name">Заявка №12345-567 от 12.12.2022</div>
+                                    <div class="ob-docs-list">
+                                        <div class="ob-doc">документ из заявки</div>
+                                        <div class="ob-doc">документ из заявки</div>
+                                        <div class="ob-doc">документ из заявки</div>
+                                    </div>
+                                </div>
+                                <div class="ob-sogl">
+                                    <div><span>Начальник ПТО: </span><span>согласовано 15.12.2022 в 18:40</span><br>
+                                        <span>Без комментариев.</span></div>
+                                    <div><span>Начальник ОС: </span><span>согласовано 15.12.2022 в 18:40</span><br>
+                                        <span>Комментрий рораору лррмшлву лрвортмолуврт</span></div>
+                                    <div><span>Директор компании: </span><span>согласовано 15.12.2022 в 18:40</span><br>
+                                        <span>Без комментариев.</span></div>
+                                    <div><span>Главный бухгалтер: </span><span>согласовано 15.12.2022 в 18:40</span><br>
+                                        <span>Без комментариев.</span></div>
+                                    <div><span>Учредитель компании: </span><span>согласовано 15.12.2022 в 18:40</span><br>
+                                        <span>Без комментариев.</span></div>
+                                </div>
+                            </div>
+
+                            <div class="object-last">
+                                <div class="progress" style="background: linear-gradient(90deg, rgba(38,109,62,1) 0%, rgba(38,109,62,1) 15%, rgba(38,109,62,0) 30%);">30%</div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="sogl_with_comment">Согласовано с комментарием</div>
+                                <div class="send_to_work">Отправить на доработку</div>
+
+                                <div class="sub-volume-button state">
+                                    <div class="sub-nav-item">Отказ</div>
+                                    <div class="sub-gradient-shadow"></div>
+                                </div>
+
+
+                                <div class="purple-grid">
+                                    <div class="purple">
+                                        <div style="height: 10%; bottom: 40%"></div>
+                                        <div style="height: 40%"></div>
+                                    </div>
+                                    <div class="purple-side">
+                                        <div>План бюджета на объект по статье затрат</div>
+                                        <div>22 548 714,30</div>
+                                        <div class="ob-cost">
+                                            <div class="lighter" style="margin-top: 37px">Сумма счета</div>
+                                            <div class="lighter">156 221,01</div>
+                                        </div>
+                                        <div style="margin-top: 14px">Освоено по статье затрат</div>
+                                        <div style="margin-bottom: 28px;">7 984 100,00</div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="object-item">
+                        <div class="object-inner">
+                            <div class="object-grid">
+                                <div class="object-full">
+                                    <div class="object-grid-five">
+                                        <div class="grided">Объект</div>
+                                        <div class="grided">
+                                            <span class="comp-name">ООО ВЕГА</span>    
+                                            <span>(СС)</span>
+                                        </div> 
+                                        <div class="grided">156 221,01 </div>
+                                        
+                                        <div class="grided">ИП Петров-Иванов Всеволод Петрович</div>
+                                        <div class="grided">№ <span class="ob-num">2345</span> <span class="ob-date">17.12.2022</span></div>
+                                    </div>
+                                </div>
+                                <div class="object-full-line"></div>
+                                <div class="grided squared">
+                                    <div class="green">Заявка #77898 от 01.12.2022 г.</div>
+                                    <div class="snab">Снабжение
+                                        <span>Мокров Сергей</span></div>
+                                    <div>Электроинструменты</div>
+                                    <div class="comment">Комментарии</div>
+                                </div>
+                                <div class="grided sopr">Здравствуйте! Прошу согласовать цены закупки ЛКМ у МО-10 в Тамани, КП во влож. Сравнительная таблица с ценами ВМП и МО-10 прилагается. Объем указанный в КП соответствует уже полученному.</div>
+                                <div class="grided last">
+                                    <a href="#" target="_blank"><img src="list.png" alt="Список"></a>
+                                    <a href="#" target="_blank"><img src="document.png" alt="Документ"></a>
+                                    <a href="#" target="_blank"><img src="list.png" alt="Список"></a>
+                                    <a href="#" target="_blank"><img src="document.png" alt="Документ"></a>
+                                    <a href="#" target="_blank"><img src="list.png" alt="Список"></a>
+                                    <a href="#" target="_blank"><img src="document.png" alt="Документ"></a>
+                                    <div class="classok">OK</div>
+                                </div>
+                            </div>
+
+                            <div class="object-detail">
+                                <div class="ob-params">
+                                    <div><span>Дата и отметка времени: </span><span>15.12.2022 в 18:40</span></div>
+                                    <div><span>Статья затрат: </span><span>Услуги</span></div>
+                                    <div><span>Отметка согласования: </span><span>В почте</span></div>
+                                    <div><span>Инициатор: </span><span>Снабжение - Иванов Иван</span></div>
+                                    <div><span>Дата и номер счета: </span><span>№23-234 от 12.12.2022</span></div>
+                                    <div><span>Дата оплаты: </span><span>23.12.2022</span></div>
+                                    <div><span>Договор-основание: </span><span>№111-333 РПА</span></div>
+                                    <div><span>Шифр документа: </span><span>44-55-666</span></div>
+                                </div>
+                                <div class="ob-docs">
+                                    <div class="ob-name">Заявка №12345-567 от 12.12.2022</div>
+                                    <div class="ob-docs-list">
+                                        <div class="ob-doc">документ из заявки</div>
+                                        <div class="ob-doc">документ из заявки</div>
+                                        <div class="ob-doc">документ из заявки</div>
+                                    </div>
+                                </div>
+                                <div class="ob-sogl">
+                                    <div><span>Начальник ПТО: </span><span>согласовано 15.12.2022 в 18:40</span><br>
+                                        <span>Без комментариев.</span></div>
+                                    <div><span>Начальник ОС: </span><span>согласовано 15.12.2022 в 18:40</span><br>
+                                        <span>Комментрий рораору лррмшлву лрвортмолуврт</span></div>
+                                    <div><span>Директор компании: </span><span>согласовано 15.12.2022 в 18:40</span><br>
+                                        <span>Без комментариев.</span></div>
+                                    <div><span>Главный бухгалтер: </span><span>согласовано 15.12.2022 в 18:40</span><br>
+                                        <span>Без комментариев.</span></div>
+                                    <div><span>Учредитель компании: </span><span>согласовано 15.12.2022 в 18:40</span><br>
+                                        <span>Без комментариев.</span></div>
+                                </div>
+                            </div>
+
+                            <div class="object-last">
+                                <div class="progress" style="background: linear-gradient(90deg, rgba(38,109,62,1) 0%, rgba(38,109,62,1) 30%, rgba(38,109,62,0) 45%);">45%</div>
+                            </div>
+                        </div>
+
+                        <div class="column">
+                            <div class="sogl_with_comment">Согласовано с комментарием</div>
+                                <div class="send_to_work">Отправить на доработку</div>
+
+                                <div class="sub-volume-button state">
+                                    <div class="sub-nav-item">Отказ</div>
+                                    <div class="sub-gradient-shadow"></div>
+                                </div>
+
+
+                                <div class="purple-grid">
+                                    <div class="purple">
+                                        <div style="height: 10%; bottom: 40%"></div>
+                                        <div style="height: 40%"></div>
+                                    </div>
+                                    <div class="purple-side">
+                                        <div>План бюджета на объект по статье затрат</div>
+                                        <div>22 548 714,30</div>
+                                        <div class="ob-cost">
+                                            <div class="lighter" style="margin-top: 37px">Сумма счета</div>
+                                            <div class="lighter">156 221,01</div>
+                                        </div>
+                                        <div style="margin-top: 14px">Освоено по статье затрат</div>
+                                        <div style="margin-bottom: 28px;">7 984 100,00</div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="object-item">
+                        <div class="object-inner active">
+                            <div class="object-grid">
+                                <div class="object-full">
+                                    <div class="object-grid-five">
+                                        <div class="grided">Объект</div>
+                                        <div class="grided">
+                                            <span class="comp-name">ООО ВЕГА</span>    
+                                            <span>(СС)</span>
+                                        </div> 
+                                        <div class="grided">156 221,01 </div>
+                                        
+                                        <div class="grided">ИП Петров-Иванов Всеволод Петрович</div>
+                                        <div class="grided">№ <span class="ob-num">2345</span> <span class="ob-date">17.12.2022</span></div>
+                                    </div>
+                                </div>
+                                <div class="object-full-line"></div>
+                                <div class="grided squared">
+                                    <div class="green">Заявка #77898 от 01.12.2022 г.</div>
+                                    <div class="snab">Снабжение
+                                        <span>Мокров Сергей</span></div>
+                                    <div>Электроинструменты</div>
+                                    <div class="comment">Комментарии</div>
+                                </div>
+                                <div class="grided sopr">Здравствуйте! Прошу согласовать цены закупки ЛКМ у МО-10 в Тамани, КП во влож. Сравнительная таблица с ценами ВМП и МО-10 прилагается. Объем указанный в КП соответствует уже полученному.</div>
+                                <div class="grided last">
+                                    <img src="list.png" alt="Список"><img src="document.png" alt="Документ">
+                                    <div class="classok">OK</div>
+                                </div>
+                            </div>
+
+                            <div class="object-detail">
+                                <div class="ob-params">
+                                    <div><span>Дата и отметка времени: </span><span>15.12.2022 в 18:40</span></div>
+                                    <div><span>Статья затрат: </span><span>Услуги</span></div>
+                                    <div><span>Отметка согласования: </span><span>В почте</span></div>
+                                    <div><span>Инициатор: </span><span>Снабжение - Иванов Иван</span></div>
+                                    <div><span>Дата и номер счета: </span><span>№23-234 от 12.12.2022</span></div>
+                                    <div><span>Дата оплаты: </span><span>23.12.2022</span></div>
+                                    <div><span>Договор-основание: </span><span>№111-333 РПА</span></div>
+                                    <div><span>Шифр документа: </span><span>44-55-666</span></div>
+                                </div>
+                                <div class="ob-docs">
+                                    <div class="ob-name">Заявка №12345-567 от 12.12.2022</div>
+                                    <div class="ob-docs-list">
+                                        <div class="ob-doc">документ из заявки</div>
+                                        <div class="ob-doc">документ из заявки</div>
+                                        <div class="ob-doc">документ из заявки</div>
+                                    </div>
+                                </div>
+                                <div class="ob-sogl">
+                                    <div><span>Начальник ПТО: </span><span>согласовано 15.12.2022 в 18:40</span><br>
+                                        <span>Без комментариев.</span></div>
+                                    <div><span>Начальник ОС: </span><span>согласовано 15.12.2022 в 18:40</span><br>
+                                        <span>Комментрий рораору лррмшлву лрвортмолуврт</span></div>
+                                    <div><span>Директор компании: </span><span>согласовано 15.12.2022 в 18:40</span><br>
+                                        <span>Без комментариев.</span></div>
+                                    <div><span>Главный бухгалтер: </span><span>согласовано 15.12.2022 в 18:40</span><br>
+                                        <span>Без комментариев.</span></div>
+                                    <div><span>Учредитель компании: </span><span>согласовано 15.12.2022 в 18:40</span><br>
+                                        <span>Без комментариев.</span></div>
+                                </div>
+                            </div>
+
+                            <div class="object-last">
+                                <div class="progress" style="background: linear-gradient(90deg, rgba(38,109,62,1) 0%, rgba(38,109,62,1) 30%, rgba(38,109,62,0) 45%);">45%</div>
+                            </div>
+                        </div>
+
+                        <div class="column">
+                            <div class="sogl_with_comment">Согласовано с комментарием</div>
+                                <div class="send_to_work">Отправить на доработку</div>
+
+                                <div class="sub-volume-button state">
+                                    <div class="sub-nav-item">Отказ</div>
+                                    <div class="sub-gradient-shadow"></div>
+                                </div>
+
+
+                                <div class="purple-grid">
+                                    <div class="purple">
+                                        <div style="height: 10%; bottom: 40%"></div>
+                                        <div style="height: 40%"></div>
+                                    </div>
+                                    <div class="purple-side">
+                                        <div>План бюджета на объект по статье затрат</div>
+                                        <div>22 548 714,30</div>
+                                        <div class="ob-cost">
+                                            <div class="lighter" style="margin-top: 37px">Сумма счета</div>
+                                            <div class="lighter">156 221,01</div>
+                                        </div>
+                                        <div style="margin-top: 14px">Освоено по статье затрат</div>
+                                        <div style="margin-bottom: 28px;">7 984 100,00</div>
+                                    </div>
+                                </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>

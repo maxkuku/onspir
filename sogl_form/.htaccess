@@ -1,0 +1,6 @@
+# admin q12345Q
+
+AuthType Basic
+AuthName "Login and pass access"
+AuthUserFile "/home/labreunis/maxkuku.ru/cgi/passwd"
+require valid-user
