@@ -1,0 +1,125 @@
+.div_sogl_tree {
+    position: relative;
+    width: 102px;
+    height: 222px;
+
+    [class*="sogl"] {
+        background: radial-gradient(65% 65% at 28.5% 20%, rgba(253, 253, 253, 0.63) 0%, rgba(255, 255, 255, 0.37) 100%);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 6px rgba(0, 0, 0, 0.25), inset -4px -4px 6px rgba(0, 0, 0, 0.25), inset 0px 4px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .sogl1 {
+        text-align: center;
+        width: 39px;
+        height: 39px;
+        left: 32px;
+        top: 13px;
+
+        span:first-of-type {
+            font-size: 9px;
+            display: block;
+            line-height: 36px;
+            margin-bottom: -16px;
+        }
+
+        span:last-of-type {
+            font-size: 5px;
+            display: block;
+            line-height: 8px;
+        }
+    }
+
+    .sogl2 {
+        width: 25px;
+        height: 25px;
+        left: 16px;
+        top: 61px;
+    }
+
+    .sogl3 {
+        width: 28px;
+        height: 28px;
+        left: 54px;
+        top: calc(431px - 350px);
+    }
+
+    .sogl4 {
+        width: 31px;
+        height: 31px;
+        left: 16px;
+        top: 110px;
+    }
+
+    .sogl5 {
+        width: 35px;
+        height: 35px;
+        left: 53px;
+        top: 137px;
+    }
+
+    .sogl6 {
+        width: 39px;
+        height: 39px;
+        left: 11px;
+        top: 165px;
+    }
+
+    [class*="line"] {
+        position: absolute;
+        border-radius: 50%;
+        border: 0.5px dashed transparent;
+        border-left-color: #444444;
+    }
+
+    [class*="line"].active + [class*="sogl"] {
+        background: url(./done_all.svg) no-repeat center;
+    }
+
+    [class*="line"].active {
+        border-left: 0.5px solid #444;
+    }
+
+    .line1 {
+        width: 27px;
+        height: 27px;
+        left: 25px;
+        top: 43px;
+        transform: rotate(28deg);
+    }
+
+    .line2 {
+        width: 28px;
+        height: 28px;
+        left: 28.7px;
+        top: 73px;
+        transform: rotate(128deg);
+    }
+
+
+    .line3 {
+        width: 35px;
+        height: 33px;
+        left: 36px;
+        top: 96px;
+        transform: rotate(49deg);
+    }
+
+    .line4 {
+        width: 35px;
+        height: 33px;
+        left: 27px;
+        top: 122px;
+        transform: rotate(139deg);
+    }
+
+    .line5 {
+        width: 28px;
+        height: 24px;
+        left: 39px;
+        top: 158px;
+        transform: rotate(52deg);
+    }
+
+}
