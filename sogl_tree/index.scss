@@ -8,6 +8,12 @@
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 6px rgba(0, 0, 0, 0.25), inset -4px -4px 6px rgba(0, 0, 0, 0.25), inset 0px 4px 6px rgba(0, 0, 0, 0.25);
         border-radius: 50%;
         position: absolute;
+
+        &:after {
+            display: block;
+            color: rgba(146, 143, 143, 1);
+            text-align: center;
+        }
     }
 
     .sogl1 {
@@ -36,6 +42,11 @@
         height: 25px;
         left: 16px;
         top: 61px;
+
+        &:after {
+            content: "1";
+            margin-top: 25px;
+        }
     }
 
     .sogl3 {
@@ -43,6 +54,11 @@
         height: 28px;
         left: 54px;
         top: calc(431px - 350px);
+
+        &:after {
+            content: "2";
+            margin-top: 28px;
+        }
     }
 
     .sogl4 {
@@ -50,6 +66,11 @@
         height: 31px;
         left: 16px;
         top: 110px;
+
+        &:after {
+            content: "3";
+            margin-top: 31px;
+        }
     }
 
     .sogl5 {
@@ -57,6 +78,11 @@
         height: 35px;
         left: 53px;
         top: 137px;
+
+        &:after {
+            content: "4";
+            margin-top: 35px;
+        }
     }
 
     .sogl6 {
@@ -64,7 +90,13 @@
         height: 39px;
         left: 11px;
         top: 165px;
+
+        &:after {
+            content: "5";
+            margin-top: 38px;
+        }
     }
+
 
     [class*="line"] {
         position: absolute;
@@ -75,6 +107,14 @@
 
     [class*="line"].active + [class*="sogl"] {
         background: url(./done_all.svg) no-repeat center;
+    }
+
+    [class*="line"].notapproved + [class*="sogl"] {
+        background: url(./not-approve.svg) no-repeat center;
+    }
+
+    [class*="line"].rework + [class*="sogl"] {
+        background: url(./rework.svg) no-repeat center / 7px;
     }
 
     [class*="line"].active {
