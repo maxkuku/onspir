@@ -206,6 +206,13 @@ select.nonappear {
   border-color: #444444;
 }
 
+@media (max-width: 1820px) {
+  .objects-list .object-item {
+    -ms-grid-columns: 1fr 290px;
+        grid-template-columns: 1fr 290px;
+  }
+}
+
 .objects-list .object-grid {
   -ms-grid-columns: 31% 33% 36%;
       grid-template-columns: 31% 33% 36%;
@@ -239,6 +246,20 @@ select.nonappear {
   display: grid;
 }
 
+@media (max-width: 1730px) {
+  .objects-list .object-grid .object-grid-five {
+    -ms-grid-columns: 31.3% 21.6% 8.6% 23% 12.6%;
+        grid-template-columns: 31.3% 21.6% 8.6% 23% 12.6%;
+  }
+}
+
+@media (max-width: 1650px) {
+  .objects-list .object-grid .object-grid-five {
+    -ms-grid-columns: 27.3% 20.6% 9.6% 24% 14.6%;
+        grid-template-columns: 27.3% 20.6% 9.6% 24% 14.6%;
+  }
+}
+
 .objects-list .object-grid .grided {
   padding: 10px 0 8px 20px;
 }
@@ -251,6 +272,12 @@ select.nonappear {
 .objects-list .object-grid .grided.last a {
   display: inline-block;
   margin-bottom: 10px;
+}
+
+@media (max-width: 1650px) {
+  .objects-list .object-grid .grided.last a {
+    margin-bottom: 20px;
+  }
 }
 
 .objects-list .object-grid .grided.last .classok {
@@ -307,11 +334,24 @@ select.nonappear {
   display: block;
 }
 
+@media (max-width: 1650px) {
+  .objects-list .object-grid {
+    -ms-grid-columns: 27% 35% 38%;
+        grid-template-columns: 27% 35% 38%;
+  }
+}
+
 .objects-list .object-full {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1/4;
   padding: 20px 20px 8px;
+}
+
+@media (max-width: 1650px) {
+  .objects-list .object-full {
+    padding: 10px 20px 8px;
+  }
 }
 
 .objects-list .object-full-line {
@@ -387,6 +427,13 @@ select.nonappear {
 
 .object-detail .ob-sogl > div span:nth-child(2) {
   color: #444;
+}
+
+@media (max-width: 1650px) {
+  .object-detail {
+    -ms-grid-columns: 27% 36% 37%;
+        grid-template-columns: 27% 36% 37%;
+  }
 }
 
 .object-last {

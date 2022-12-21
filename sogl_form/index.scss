@@ -172,6 +172,13 @@ select.nonappear {
             }
         }
     }
+
+    @media(max-width: 1820px) {
+        .object-item {
+            grid-template-columns: 1fr 290px;
+        }
+    }
+
     .object-grid {
         grid-template-columns: 31% 33% 36%;
         display: grid;
@@ -198,6 +205,17 @@ select.nonappear {
             }
         }
 
+        @media (max-width: 1730px) {
+            .object-grid-five {
+                grid-template-columns: 31.3% 21.6% 8.6% 23% 12.6%;
+            }
+        }
+        @media (max-width: 1650px) {
+            .object-grid-five {
+                grid-template-columns: 27.3% 20.6% 9.6% 24% 14.6%;
+            }
+        }
+
         .grided {
             padding: 10px 0 8px 20px;
 
@@ -208,6 +226,12 @@ select.nonappear {
                 a {
                     display: inline-block;
                     margin-bottom: 10px;
+                }
+
+                @media (max-width: 1650px) {
+                    a {
+                        margin-bottom: 20px;
+                    }
                 }
 
                 .classok {
@@ -267,9 +291,20 @@ select.nonappear {
             }
         }
     }
+
+    @media(max-width:1650px){
+        .object-grid {
+            grid-template-columns: 27% 35% 38%;
+        }
+    }
     .object-full {
         grid-column: 1/4;
         padding: 20px 20px 8px;
+    }
+    @media(max-width:1650px) {
+        .object-full {
+            padding: 10px 20px 8px;
+        }
     }
     .object-full-line {
         height: 0.5px;
@@ -320,6 +355,7 @@ select.nonappear {
             box-sizing: border-box;
         }
     }
+    
     .ob-params {
         & > div {
             margin-top: 9px;
@@ -338,6 +374,12 @@ select.nonappear {
                 color: #444;
             }
         }
+    }
+}
+
+@media (max-width: 1650px) {
+    .object-detail {
+        grid-template-columns: 27% 36% 37%;
     }
 }
 
