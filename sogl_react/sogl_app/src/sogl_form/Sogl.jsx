@@ -1,4 +1,5 @@
 import React from 'react';
+import Plan from '../cost_plan/Plan'
 import './Sogl.css';
 
 
@@ -79,12 +80,12 @@ return (
                             <div className='object-flexed__first paddingLeft20'>
                                 <div className="object-flexed__title">Объект</div>
                                 <div className="object-flexed__head">
-                                    <div class="object-flexed__green object-flexed__head-left">Заявка #77898 от 01.12.2022 г.</div>
-                                    <div class="object-flexed__snab object-flexed__head-right">Снабжение<span>Мокров Сергей</span></div>
+                                    <div className="object-flexed__green object-flexed__head-left">Заявка #77898 от 01.12.2022 г.</div>
+                                    <div className="object-flexed__snab object-flexed__head-right">Снабжение<span>Мокров Сергей</span></div>
                                 </div>
                                 <div className="object-flexed__head">
                                     <div className='object-flexed__head-left'>Электроинструменты</div>
-                                    <div class="object-flexed__comment object-flexed__head-right">Комментарии</div>
+                                    <div className="object-flexed__comment object-flexed__head-right">Комментарии</div>
                                 </div>
                             </div>
 
@@ -100,21 +101,21 @@ return (
                                     <div><span>Шифр документа: </span><span>44-55-666</span></div>
                                 </div>
                                 <div className="object-flexed__tree">
-                                    <div class="div_sogl_tree">
-                                        <div class="sogl1">
+                                    <div className="div_sogl_tree">
+                                        <div className="sogl1">
                                             <span>Счет</span>
                                             <span>12 345 342,00</span>
                                         </div>
-                                        <div class="line1 active"></div>
-                                        <div class="sogl2"></div>
-                                        <div class="line2 notapproved"></div>
-                                        <div class="sogl3"></div>
-                                        <div class="line3 rework"></div>
-                                        <div class="sogl4"></div>
-                                        <div class="line4"></div>
-                                        <div class="sogl5 checked"></div>
-                                        <div class="line5"></div>
-                                        <div class="sogl6"></div>
+                                        <div className="line1 active"></div>
+                                        <div className="sogl2"></div>
+                                        <div className="line2 notapproved"></div>
+                                        <div className="sogl3"></div>
+                                        <div className="line3 rework"></div>
+                                        <div className="sogl4"></div>
+                                        <div className="line4"></div>
+                                        <div className="sogl5 checked"></div>
+                                        <div className="line5"></div>
+                                        <div className="sogl6"></div>
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +169,7 @@ return (
                                 <span className="object-flexed__obdate">17.12.2022</span>
                                 </div>
 
-                                <div class="object-flexed__first-last">
+                                <div className="object-flexed__first-last">
                                     <img src="list.png" alt="Список" />
                                     <img src="document.png" alt="Документ" />
                                 </div>
@@ -182,7 +183,7 @@ return (
                             
 
                             <div className="object-flexed__second">
-                                <div class="ob-sogl">
+                                <div className="ob-sogl">
                                     <div><span>Начальник ПТО: </span><span>согласовано 15.12.2022 в
                                             18:40</span><br /><span>Без комментариев.</span></div>
                                     <div><span>Начальник ОС: </span><span>согласовано 15.12.2022 в
@@ -207,6 +208,7 @@ return (
 
 
                     <div className="object-last">
+                        
                         <div className="progress"
                             style={{background: 'linear-gradient(90deg, rgba(38,109,62,1) 0%, rgba(38,109,62,1) 30%, rgba(38,109,62,0) 45%)'}}>
                             45%</div>
@@ -266,22 +268,7 @@ return (
                     </div>
 
 
-                    <div className="purple-grid">
-                        <div className="purple">
-                            <div style={{height: '10%',  bottom: '40%'}}></div>
-                            <div style={{height: '40%'}}></div>
-                        </div>
-                        <div className="purple-side">
-                            <div>План бюджета на объект по статье затрат</div>
-                            <div>22 548 714,30</div>
-                            <div className="ob-cost">
-                                <div className="lighter" style={{marginTop: '37px'}}>Сумма счета</div>
-                                <div className="lighter">156 221,01</div>
-                            </div>
-                            <div style={{marginTop: '14px'}}>Освоено по статье затрат</div>
-                            <div style={{marginBottom: '28px'}}>7 984 100,00</div>
-                        </div>
-                    </div>
+                    <Plan zatr="7984100" plan_b="22548714.3" sum_s="456221.01"/>
                 </div>
 
             </div>
@@ -301,12 +288,12 @@ return (
                             <div className='object-flexed__first paddingLeft20'>
                                 <div className="object-flexed__title">Объект</div>
                                 <div className="object-flexed__head">
-                                    <div class="object-flexed__green object-flexed__head-left">Заявка #77898 от 01.12.2022 г.</div>
-                                    <div class="object-flexed__snab object-flexed__head-right">Снабжение<span>Мокров Сергей</span></div>
+                                    <div className="object-flexed__green object-flexed__head-left">Заявка #77898 от 01.12.2022 г.</div>
+                                    <div className="object-flexed__snab object-flexed__head-right">Снабжение<span>Мокров Сергей</span></div>
                                 </div>
                                 <div className="object-flexed__head">
                                     <div className='object-flexed__head-left'>Электроинструменты</div>
-                                    <div class="object-flexed__comment object-flexed__head-right">Комментарии</div>
+                                    <div className="object-flexed__comment object-flexed__head-right">Комментарии</div>
                                 </div>
                             </div>
 
@@ -322,21 +309,21 @@ return (
                                     <div><span>Шифр документа: </span><span>44-55-666</span></div>
                                 </div>
                                 <div className="object-flexed__tree">
-                                    <div class="div_sogl_tree">
-                                        <div class="sogl1">
+                                    <div className="div_sogl_tree">
+                                        <div className="sogl1">
                                             <span>Счет</span>
                                             <span>12 345 342,00</span>
                                         </div>
-                                        <div class="line1 active"></div>
-                                        <div class="sogl2"></div>
-                                        <div class="line2 notapproved"></div>
-                                        <div class="sogl3"></div>
-                                        <div class="line3 rework"></div>
-                                        <div class="sogl4"></div>
-                                        <div class="line4"></div>
-                                        <div class="sogl5 checked"></div>
-                                        <div class="line5"></div>
-                                        <div class="sogl6"></div>
+                                        <div className="line1 active"></div>
+                                        <div className="sogl2"></div>
+                                        <div className="line2 notapproved"></div>
+                                        <div className="sogl3"></div>
+                                        <div className="line3 rework"></div>
+                                        <div className="sogl4"></div>
+                                        <div className="line4"></div>
+                                        <div className="sogl5 checked"></div>
+                                        <div className="line5"></div>
+                                        <div className="sogl6"></div>
                                     </div>
                                 </div>
                             </div>
@@ -390,7 +377,7 @@ return (
                                 <span className="object-flexed__obdate">17.12.2022</span>
                                 </div>
 
-                                <div class="object-flexed__first-last">
+                                <div className="object-flexed__first-last">
                                     <img src="list.png" alt="Список" />
                                     <img src="document.png" alt="Документ" />
                                 </div>
@@ -404,7 +391,7 @@ return (
                             
 
                             <div className="object-flexed__second">
-                                <div class="ob-sogl">
+                                <div className="ob-sogl">
                                     <div><span>Начальник ПТО: </span><span>согласовано 15.12.2022 в
                                             18:40</span><br /><span>Без комментариев.</span></div>
                                     <div><span>Начальник ОС: </span><span>согласовано 15.12.2022 в
@@ -488,22 +475,7 @@ return (
                     </div>
 
 
-                    <div className="purple-grid">
-                        <div className="purple">
-                            <div style={{height: '10%',  bottom: '40%'}}></div>
-                            <div style={{height: '40%'}}></div>
-                        </div>
-                        <div className="purple-side">
-                            <div>План бюджета на объект по статье затрат</div>
-                            <div>22 548 714,30</div>
-                            <div className="ob-cost">
-                                <div className="lighter" style={{marginTop: '37px'}}>Сумма счета</div>
-                                <div className="lighter">156 221,01</div>
-                            </div>
-                            <div style={{marginTop: '14px'}}>Освоено по статье затрат</div>
-                            <div style={{marginBottom: '28px'}}>7 984 100,00</div>
-                        </div>
-                    </div>
+                    <Plan zatr="8984100" plan_b="12548714.5" sum_s="256220.65"/>
                 </div>
 
             </div>
@@ -520,12 +492,12 @@ return (
                             <div className='object-flexed__first paddingLeft20'>
                                 <div className="object-flexed__title">Объект</div>
                                 <div className="object-flexed__head">
-                                    <div class="object-flexed__green object-flexed__head-left">Заявка #77898 от 01.12.2022 г.</div>
-                                    <div class="object-flexed__snab object-flexed__head-right">Снабжение<span>Мокров Сергей</span></div>
+                                    <div className="object-flexed__green object-flexed__head-left">Заявка #77898 от 01.12.2022 г.</div>
+                                    <div className="object-flexed__snab object-flexed__head-right">Снабжение<span>Мокров Сергей</span></div>
                                 </div>
                                 <div className="object-flexed__head">
                                     <div className='object-flexed__head-left'>Электроинструменты</div>
-                                    <div class="object-flexed__comment object-flexed__head-right">Комментарии</div>
+                                    <div className="object-flexed__comment object-flexed__head-right">Комментарии</div>
                                 </div>
                             </div>
 
@@ -541,21 +513,21 @@ return (
                                     <div><span>Шифр документа: </span><span>44-55-666</span></div>
                                 </div>
                                 <div className="object-flexed__tree">
-                                    <div class="div_sogl_tree">
-                                        <div class="sogl1">
+                                    <div className="div_sogl_tree">
+                                        <div className="sogl1">
                                             <span>Счет</span>
                                             <span>12 345 342,00</span>
                                         </div>
-                                        <div class="line1 active"></div>
-                                        <div class="sogl2"></div>
-                                        <div class="line2 notapproved"></div>
-                                        <div class="sogl3"></div>
-                                        <div class="line3 rework"></div>
-                                        <div class="sogl4"></div>
-                                        <div class="line4"></div>
-                                        <div class="sogl5 checked"></div>
-                                        <div class="line5"></div>
-                                        <div class="sogl6"></div>
+                                        <div className="line1 active"></div>
+                                        <div className="sogl2"></div>
+                                        <div className="line2 notapproved"></div>
+                                        <div className="sogl3"></div>
+                                        <div className="line3 rework"></div>
+                                        <div className="sogl4"></div>
+                                        <div className="line4"></div>
+                                        <div className="sogl5 checked"></div>
+                                        <div className="line5"></div>
+                                        <div className="sogl6"></div>
                                     </div>
                                 </div>
                             </div>
@@ -609,7 +581,7 @@ return (
                                 <span className="object-flexed__obdate">17.12.2022</span>
                                 </div>
 
-                                <div class="object-flexed__first-last">
+                                <div className="object-flexed__first-last">
                                     <img src="list.png" alt="Список" />
                                     <img src="document.png" alt="Документ" />
                                 </div>
@@ -623,7 +595,7 @@ return (
                             
 
                             <div className="object-flexed__second">
-                                <div class="ob-sogl">
+                                <div className="ob-sogl">
                                     <div><span>Начальник ПТО: </span><span>согласовано 15.12.2022 в
                                             18:40</span><br /><span>Без комментариев.</span></div>
                                     <div><span>Начальник ОС: </span><span>согласовано 15.12.2022 в
@@ -707,22 +679,7 @@ return (
                     </div>
 
 
-                    <div className="purple-grid">
-                        <div className="purple">
-                            <div style={{height: '10%',  bottom: '40%'}}></div>
-                            <div style={{height: '40%'}}></div>
-                        </div>
-                        <div className="purple-side">
-                            <div>План бюджета на объект по статье затрат</div>
-                            <div>22 548 714,30</div>
-                            <div className="ob-cost">
-                                <div className="lighter" style={{marginTop: '37px'}}>Сумма счета</div>
-                                <div className="lighter">156 221,01</div>
-                            </div>
-                            <div style={{marginTop: '14px'}}>Освоено по статье затрат</div>
-                            <div style={{marginBottom: '28px'}}>7 984 100,00</div>
-                        </div>
-                    </div>
+                    <Plan zatr="5985100" plan_b="11008714.5" sum_s="356220.65"/>
                 </div>
 
             </div>

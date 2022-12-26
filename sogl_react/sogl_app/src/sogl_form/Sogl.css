@@ -408,6 +408,8 @@ select.nonappear {
   z-index: 4;
   position: relative;
   border-radius: 0 0 10px 10px;
+  z-index: 2;
+  background-color: #eee;
   display: none;
 }
 .objects-list .m-comments-here h2 {
