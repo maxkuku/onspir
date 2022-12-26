@@ -1,0 +1,35 @@
+.page-header {
+    display: grid;
+    grid-template-columns: 22% 10% max-content 10px max-content;
+    align-items: center;
+    padding: 35px 20px 20px;
+
+    input {
+        color: #928F8F;
+        font-size: 14px;
+        line-height: 16px;
+        background-color: transparent;
+    }
+
+    button {
+        border: none;
+        background-color: transparent;
+        color: #928F8F;
+        width: max-content;
+        cursor: pointer;
+    }
+
+    span {
+        color: #928F8F;
+    }
+
+    button.active {
+        color: #444;
+    }
+
+    h1 {
+        font-weight: 500;
+        line-height: 21px;
+        font-size: 18px;
+    }
+}

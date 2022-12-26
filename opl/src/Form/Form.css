@@ -1,0 +1,215 @@
+body * {
+    font-family: 'Ubuntu', sans-serif;
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.formBlock {
+    display: grid;
+    grid-template-columns: 1fr 60px;
+    width: 100%;
+    align-items: flex-end;
+}
+.formWrapper {
+    display: block;
+    max-width: 731px;
+    width: 100%;
+    margin: auto;
+    background: white;
+}
+.z_order {
+    color: #444;
+    padding: 41px;
+    margin-top: 10em;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+}
+.z_order input {
+    box-sizing: border-box;
+}
+.z_order input:focus {
+    outline:none;
+}
+.z_order h2 {
+    font-size: 21px;
+    text-align: center;
+}
+.z_order input[type="file"] {
+    display: none;
+}
+.z_order label.customFileUpload [name="dogovor_data"] {
+    border-radius: 10px 0 0 10px;
+}
+.z_order label.customFileUpload [name="dogovor"] {
+    border-radius: 0 10px 10px 0;
+}
+.z_order label {
+    display: block;
+    margin: 20px 0;
+}
+.z_order label input {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 8px;
+    background-color: #f5f5f5;
+    border: none;
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+    max-height: 54px;
+}
+.z_order textarea {
+    display: block;
+    border: 0;
+    background: #f5f5f5;
+    width: 100%;
+    margin-top: 8px;
+    border-radius: 10px;
+    transition: .3s;
+    padding: 20px;
+    height: 54px;
+    line-height: 1em;
+}
+.z_order .select_vis {
+    background: #f5f5f5;
+    width: 100%;
+    margin-top: 8px;
+    border-radius: 10px;
+    transition: .3s;
+    padding: 20px;
+    height: 54px;
+    line-height: 1em;
+    display: grid;
+    grid-template-columns: 1fr 27px;
+    position: relative;
+    font-size: 13px;
+    color: #928F8F;
+    transition: .3s;
+    
+}
+.z_order .select_vis span {
+    text-align: center;
+    background: white;
+    display: block;
+    border-radius: 50%;
+    height: 27px;
+    line-height: 27px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 27px;
+    cursor: pointer;
+}
+.z_order .select_vis span.active img {
+    transform: rotate(180deg);
+}
+.z_order .select_hid {
+    /* opacity: 0; */
+    transition: .3s;
+    width: 284px;
+    background: white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    backdrop-filter: blur(13px);
+}
+.z_order .select_hid > div {
+    font-size: 15px;
+    padding: 7px 20px 9px 20px;
+    border-bottom: 0.5px solid #928F8F;
+}
+.z_order .select_hid .nopadding10 {
+    padding: 3px;
+}
+.z_order .select_hid input[type="search"] {
+    border: 0;
+    width: 100%;
+    border-radius: 20px;
+    font-size: 15px;
+    line-height: 30px;
+    padding-left: 40px;
+    background: rgba(164, 164, 172, 0.24) url(magnifyingglass.png) no-repeat 16px center / 16px;
+    padding-right: 20px;
+}
+.z_order textarea:focus {
+    outline: none;
+    height: 7em;
+}
+.z_order ::placeholder {
+    color:#928F8F;
+}
+.z_order input[name="dogovor_data"] {
+    border-radius: 10px 0 0 10px;
+}
+.z_order .formBlock .customFileUpload {
+    background: #f5f5f5 url(chip.svg) no-repeat center / 13px 23px;
+    width: 100%;
+    height: 54px;
+    display: block;
+    border-radius: 0 10px 10px 0;
+}
+.z_order .res {
+    margin: 48px;
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: block;
+    font-size: 13px;
+    color: #928F8F;
+}
+.z_order .buttonsBlock {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+}
+.z_order .buttonsBlock button {
+    background: #D0D6D8;
+    border: 0.5px solid #444444;
+    border-radius: 10px;
+    padding: 22px 0 26px;
+    color: #444444;
+    transition: .3s;
+    cursor:pointer;
+}
+.z_order .buttonsBlock button:hover {
+    background: radial-gradient(89.21% 1226.39% at 10.79% 23.85%, rgba(233, 233, 235, 0.56) 0%, rgba(233, 233, 235, 0.6) 100%);
+}
+.z_order .buttonsBlock input {
+    background: radial-gradient(89.21% 1226.39% at 10.79% 23.85%, rgba(233, 233, 235, 0.56) 0%, rgba(233, 233, 235, 0.6) 100%);
+    border: 0.5px solid #928F8F;
+    border-radius: 10px;
+    padding: 22px 0 26px;
+    color: #444444;
+    cursor:pointer;
+    transition: .3s;
+}
+.z_order .buttonsBlock input:hover{
+    background: #D0D6D8;
+}
+.z_order select {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+}
+select::-ms-expand {
+    display: none;
+}
+@media(max-width:767.98px) {
+    .z_order .buttonsBlock {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
