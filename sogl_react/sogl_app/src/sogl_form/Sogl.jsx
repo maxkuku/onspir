@@ -1,6 +1,7 @@
 import React from 'react';
 import Plan from '../cost_plan/Plan'
 import './Sogl.css';
+import Line from '../Line/Line'
 
 
 
@@ -209,9 +210,7 @@ return (
 
                     <div className="object-last">
                         
-                        <div className="progress"
-                            style={{background: 'linear-gradient(90deg, rgba(38,109,62,1) 0%, rgba(38,109,62,1) 30%, rgba(38,109,62,0) 45%)'}}>
-                            45%</div>
+                        <Line persent='45'/>
                     </div>
 
 
@@ -416,9 +415,7 @@ return (
 
 
                     <div className="object-last">
-                        <div className="progress"
-                            style={{background: 'linear-gradient(90deg, rgba(38,109,62,1) 0%, rgba(38,109,62,1) 30%, rgba(38,109,62,0) 45%)'}}>
-                            45%</div>
+                    <Line persent='50'/>
                     </div>
 
 
@@ -620,9 +617,7 @@ return (
 
 
                     <div className="object-last">
-                        <div className="progress"
-                            style={{background: 'linear-gradient(90deg, rgba(38,109,62,1) 0%, rgba(38,109,62,1) 30%, rgba(38,109,62,0) 45%)'}}>
-                            45%</div>
+                    <Line persent='65'/>
                     </div>
 
 

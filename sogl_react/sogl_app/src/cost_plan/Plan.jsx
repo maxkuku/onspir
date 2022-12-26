@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-function Plan(props) {
+const Plan = (props) => {
 
     const zatr = props.zatr;
     const plan_b = props.plan_b;
