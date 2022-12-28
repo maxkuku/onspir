@@ -119,7 +119,7 @@ select.nonappear {
   font-size: 14px;
 }
 .objects-list .object-item {
-  height: 169px;
+  height: 128px;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 310px;
@@ -148,6 +148,7 @@ select.nonappear {
 }
 .objects-list .object-item .object-inner .object-flexed__inner {
   display: flex;
+  height: 93px;
 }
 .objects-list .object-item .object-inner .object-flexed__inner .object-flexed.col-1 {
   flex: 0 0 28%;
@@ -157,37 +158,60 @@ select.nonappear {
 }
 .objects-list .object-item .object-inner .object-flexed__inner .object-flexed.col-2 .object-flexed__head {
   padding-right: 10px;
+  line-height: 20px !important;
+  max-height: 5em;
+  overflow: hidden;
 }
 .objects-list .object-item .object-inner .object-flexed__inner .object-flexed.col-3 {
   flex: 0 0 37%;
 }
-@media (max-width: 1366px) {
-  .objects-list .object-item .object-inner .object-flexed__inner .object-flexed.col-1 {
-    flex: 0 0 35%;
-  }
+@media (max-width: 1650px) {
   .objects-list .object-item .object-inner .object-flexed__inner .object-flexed.col-2 {
-    flex: 0 0 35%;
+    flex: 0 0 32%;
   }
   .objects-list .object-item .object-inner .object-flexed__inner .object-flexed.col-3 {
-    flex: 0 0 30%;
+    flex: 0 0 40%;
+  }
+}
+@media (max-width: 1570px) {
+  .objects-list .object-item .object-inner .object-flexed__inner .object-flexed.col-3 {
+    flex: 0 0 39.5%;
+  }
+}
+@media (max-width: 1366px) {
+  .objects-list .object-item .object-inner .object-flexed__inner .object-flexed.col-1 {
+    flex: 0 0 27%;
+  }
+  .objects-list .object-item .object-inner .object-flexed__inner .object-flexed.col-2 {
+    flex: 0 0 33%;
+  }
+  .objects-list .object-item .object-inner .object-flexed__inner .object-flexed.col-3 {
+    flex: 0 0 40%;
+  }
+  .objects-list .object-item .object-inner .object-flexed__inner .object-flexed.col-3 .object-flexed__title {
+    line-height: 2em;
+    top: -6px;
+    position: relative;
+    padding-bottom: 27px;
   }
 }
 @media (max-width: 1270px) {
   .objects-list .object-item .object-inner .object-flexed__inner .object-flexed.col-1 {
-    flex: 0 0 35%;
+    flex: 0 0 27%;
   }
   .objects-list .object-item .object-inner .object-flexed__inner .object-flexed.col-2 {
-    flex: 0 0 30%;
+    flex: 0 0 33%;
   }
   .objects-list .object-item .object-inner .object-flexed__inner .object-flexed.col-3 {
-    flex: 0 0 calc(35% - 3px);
+    flex: 0 0 calc(39% - 3px);
   }
   .objects-list .object-item .object-inner .object-flexed__inner .object-flexed.col-3 .object-flexed__second {
     padding-right: 4px;
   }
 }
 .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__first-last {
-  flex: 0 0 100%;
+  flex: 0 0 70%;
+  padding-top: 10px;
 }
 @media (max-width: 1366px) {
   .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__first-last {
@@ -196,49 +220,50 @@ select.nonappear {
   }
 }
 .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__title {
-  padding: 10px 10px 8px 0;
+  padding: 6px 0;
   font-weight: 700;
   font-size: 14px;
-  line-height: 36px;
+  line-height: 16px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-  height: 46px;
+  height: 28px;
 }
 .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__title.gray {
   color: rgb(142, 142, 142);
   font-weight: 700;
   font-size: 14px;
-  line-height: 36px;
+  line-height: 16px;
   border-bottom: 0;
+  text-align: right;
+  flex: 0 0 36%;
 }
 .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__title.doflex {
   display: flex;
   justify-content: space-between;
-  padding-right: 20px;
+  padding-right: 8px;
 }
 @media (max-width: 1366px) {
   .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__title {
-    flex: 0 0 48%;
+    flex: 0 0 60%;
     overflow: hidden;
   }
 }
 .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__snab {
   font-size: 12px;
   color: #171717;
+  line-height: 13.8px;
+  margin-top: 3px;
 }
 .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__snab span {
   display: block;
 }
 .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__comment {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 700;
   color: #171717;
   padding: 0;
   background: none;
   border: 0;
   box-shadow: unset;
-}
-.objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__first {
-  min-height: 132px;
 }
 .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__first.paddingLeft20 {
   padding-left: 20px;
@@ -246,25 +271,34 @@ select.nonappear {
 .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__first.doflex {
   display: flex;
   justify-content: space-between;
-  padding-right: 20px;
+  padding-right: 10px;
   flex-wrap: wrap;
   position: relative;
+}
+.objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__first .object-flexed__green {
+  color: #266D3E;
 }
 .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__first .object-flexed__head {
   display: flex;
   gap: 10px;
-  margin: 12px 0 8px;
+  margin: 5px 10px 8px 0;
   font-weight: 700;
   font-size: 13px;
   line-height: 20px;
   color: #444444;
 }
 .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__first .object-flexed__head .object-flexed__head-left {
-  min-width: 260px;
+  min-width: 230px;
+}
+@media (max-width: 1650px) {
+  .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__first .object-flexed__head .object-flexed__head-left {
+    min-width: 190px;
+  }
 }
 @media (max-width: 1366px) {
   .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__first .object-flexed__head .object-flexed__head-left {
-    min-width: 190px;
+    min-width: 140px;
+    flex: 0 0 140px;
   }
 }
 @media (max-width: 1366px) {
@@ -272,6 +306,12 @@ select.nonappear {
     max-height: 5em;
     overflow: hidden;
     margin: 9px 0 8px;
+    line-height: 14px;
+  }
+}
+@media (max-width: 1366px) {
+  .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__first {
+    min-height: 100px;
   }
 }
 @media (max-width: 1270px) {
@@ -336,7 +376,7 @@ select.nonappear {
   color: #171717;
   padding: 24px 14px;
   box-sizing: border-box;
-  margin: 30px 30px 0 0;
+  margin: 20px 20px 10px 0px;
 }
 @media (max-width: 1366px) {
   .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__second .object-flexed__second-docslist .object-flexed__second-doc {
@@ -349,7 +389,7 @@ select.nonappear {
     height: 140px;
   }
 }
-@media (max-width: 1430px) {
+@media (max-width: 1650px) {
   .objects-list .object-item .object-inner .object-flexed__inner .object-flexed .object-flexed__second .object-flexed__second-docslist {
     flex-wrap: wrap;
   }
@@ -380,8 +420,8 @@ select.nonappear {
   line-height: 50px;
   box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25);
   color: #D9D9D9;
-  right: 60px;
-  top: 50px;
+  right: 46px;
+  top: 32px;
   cursor: pointer;
   background: radial-gradient(65% 65% at 28.5% 20%, rgba(253, 253, 253, 0.63) 0%, rgba(255, 255, 255, 0.37) 100%);
 }
@@ -405,11 +445,11 @@ select.nonappear {
 .objects-list .m-comments-here h2 {
   margin: 6px 0 4px;
 }
-.objects-list .expanded .m-comments-here {
-  display: block;
-}
 .objects-list .active .object-last {
   background-color: #ebdbdb;
+}
+.objects-list .expanded .m-comments-here {
+  display: block;
 }
 .objects-list .expanded .sub-volume-button {
   display: grid;
@@ -429,9 +469,21 @@ select.nonappear {
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
           clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
 }
+.objects-list .expanded .object-inner .object-flexed__inner {
+  height: auto;
+}
+.objects-list .expanded .object-inner .object-flexed__inner .object-flexed.col-2 .object-flexed__head {
+  max-height: 4.6em;
+}
 .objects-list .expanded .object-inner .object-flexed__inner .object-flexed .object-flexed__second {
   display: flex !important;
   height: 100%;
+}
+.objects-list .expanded .object-inner .object-flexed__inner .object-flexed .object-flexed__first-last {
+  padding-top: 0;
+}
+.objects-list .expanded .object-inner .object-flexed__inner .object-flexed__first {
+  min-height: 116px;
 }
 .objects-list .expanded .object-last {
   background-color: #fff;
@@ -443,6 +495,12 @@ select.nonappear {
   .objects-list .expanded .grided.last a {
     margin-bottom: 10px !important;
   }
+}
+.objects-list .expanded .column .sub-nav-item {
+  padding: 5px 15px;
+}
+.objects-list .expanded .grided.last a {
+  margin-bottom: 10px !important;
 }
 .objects-list .column {
   width: 290px;
@@ -494,12 +552,6 @@ select.nonappear {
   font-size: 14px;
   line-height: 16px;
   position: relative;
-}
-.objects-list .expanded .column .sub-nav-item {
-  padding: 5px 15px;
-}
-.objects-list .expanded .grided.last a {
-  margin-bottom: 10px !important;
 }
 .objects-list .div_sogl_tree {
   position: relative;
