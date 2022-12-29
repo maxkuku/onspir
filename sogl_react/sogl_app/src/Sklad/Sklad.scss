@@ -3,6 +3,48 @@
     grid-template-columns: 1fr 500px;
     gap: 1em;
     padding: 1em;
+
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+
+        .item_info_button {
+            background: linear-gradient(90deg, rgba(68,68,68,0.3) 0%, rgba(68,68,68,0.65) 100%);
+            transition: .3s;
+        }
+
+        .item_info_button:hover {
+            background: linear-gradient(90deg, rgba(68,68,68,0.4) 0%, rgba(68,68,68,0.7) 100%);
+        }
+    }
+
+    .storage {
+        .storage-unit {
+            .storage-unit-container {
+                background: #F5F5F5;
+                border-radius: 10px;
+                box-shadow: unset;
+                padding: 0 20px;
+                height: 55px;
+
+                .storage-unit-text {
+                    input {
+                        background-color: transparent;
+
+                        &::placeholder {
+                            font-size: 13px;
+                            line-height: 15px;
+                            color: #928F8F;
+                        }
+                    }
+                }
+                .storage-unit-arrow {
+                    height: 27px;
+                    width: 27px;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 1200px) {

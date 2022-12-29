@@ -22,7 +22,15 @@ function Sklad() {
     const [jarus, setJarus] = useState("");
     const [jacheika, setJacheika] = useState("");
 
-    const [searchParam] = useState(["title", "address", "sklad", "pom", "stellaj", "section", "jarus", "jacheika"]);
+    // const [searchParam, setSearchParam] = new useState(["title", "address", "sklad", "pom", "stellaj", "section", "jarus", "jacheika"]);
+
+    let skladList = [];
+    let pomList = [];
+    let stellajList = [];
+    let sectionList = [];
+    let jarusList = [];
+    let jacheikaList = [];
+    let skladListF;
 
     useEffect(() => {
       fetch("Items.js")
@@ -31,7 +39,77 @@ function Sklad() {
           (result) => {
             // console.log(result)
             setIsLoaded(true);
-            setItems(result);
+
+
+            
+            result.forEach(element => {
+                if(!skladList.includes(element.sklad))
+                    skladList.push(element.sklad);
+                if(!pomList.includes(element.pom))
+                    pomList.push(element.pom);  
+                if(!stellajList.includes(element.stellaj))
+                    stellajList.push(element.stellaj);
+                if(!sectionList.includes(element.section))
+                    sectionList.push(element.section); 
+                if(!jarusList.includes(element.jarus))
+                    jarusList.push(element.jarus);  
+                if(!jacheikaList.includes(element.jacheika))
+                    jacheikaList.push(element.jacheika);             
+            });
+
+
+            
+            skladListF() { 
+                return skladList.map((el,i) => {
+                    return (
+                        <div key={i} className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={document.querySelector('[name=sklad]').value = el}>{el}</div>
+                    );
+                })
+            }
+
+            
+            let updatedResult = [...result];
+            if(title !== '') {
+                updatedResult = updatedResult.filter((item) => {
+                    return item.title.toLowerCase().indexOf(title.toLowerCase()) !== -1
+                })
+            }
+            if(address !== '') {
+                updatedResult = updatedResult.filter((item) => {
+                    return item.address.toLowerCase().indexOf(address.toLowerCase()) !== -1
+                })
+            }
+            if(sklad !== '') {
+                updatedResult = updatedResult.filter((item) => {
+                    return item.sklad.toLowerCase().indexOf(sklad.toLowerCase()) !== -1
+                })
+            }
+            if(pom !== '') {
+                updatedResult = updatedResult.filter((item) => {
+                    return item.pom.toLowerCase().indexOf(pom.toLowerCase()) !== -1
+                })
+            }
+            if(stellaj !== '') {
+                updatedResult = updatedResult.filter((item) => {
+                    return item.stellaj.toLowerCase().indexOf(stellaj.toLowerCase()) !== -1
+                })
+            }
+            if(section !== '') {
+                updatedResult = updatedResult.filter((item) => {
+                    return item.section.toLowerCase().indexOf(section.toLowerCase()) !== -1
+                })
+            }
+            if(jarus !== '') {
+                updatedResult = updatedResult.filter((item) => {
+                    return item.jarus.toLowerCase().indexOf(jarus.toLowerCase()) !== -1
+                })
+            }
+            if(jacheika !== '') {
+                updatedResult = updatedResult.filter((item) => {
+                    return item.jacheika.toLowerCase().indexOf(jacheika.toLowerCase()) !== -1
+                })
+            }
+            setItems(updatedResult);
           },
 
           // Note: it's important to handle errors here
@@ -43,7 +121,8 @@ function Sklad() {
             setError(error);
           }
         )
-    }, [])
+    }, [title, address, sklad, pom, stellaj, section, jarus, jacheika])
+
 
     if (error) {
       return <div>Error: {error.message}</div>;
@@ -87,7 +166,7 @@ function Sklad() {
                         {items.map(item => (
 
 <div key={item.id} className="item" style={{width: '200px'}}>
-<div className="for_item" style={{maxWidth: '200px', height: '140px'}}>
+    <div className="for_item" style={{maxWidth: '200px', height: '140px'}}>
     <a href={item.link}>
         <img
             className="for_item-image"
@@ -148,38 +227,44 @@ function Sklad() {
             <div className="storage-main-text">Склад</div>
             <div className="storage-text">содержание ячеек хранения</div>
             <div className="storage-unit">
+                <div className="storage-unit-prefix">Поиск по Названию</div>
+                <div className="storage-unit-container">
+                    <div className="storage-unit-text"><input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)}/></div>
+                </div>
+            </div>
+            <div className="storage-unit">
                 <div className="storage-unit-prefix">Поиск по Адресу хранения</div>
                 <div className="storage-unit-container">
-                    <div className="storage-unit-text"><input type="text" name="address" value={address} onChange={(e) => setAddress(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arrow-down.svg" alt="" />
+                    <div className="storage-unit-text"><input type="text" name="address" value={address} onChange={(e) => setAddress(e.target.value)}/></div>
                 </div>
             </div>
             <div className="storage-unit">
                 <div className="storage-unit-prefix">Склад</div>
                 <div className="storage-unit-container">
                     <div className="storage-unit-text"><input type="text" name="sklad" value={sklad} onChange={(e) => setSklad(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arrow-down.svg" alt="" />
+                        src="arr-down.png" alt="" />
+                        {skladListF}
                 </div>
             </div>
             <div className="storage-unit">
                 <div className="storage-unit-prefix">Помещение</div>
                 <div className="storage-unit-container">
                     <div className="storage-unit-text"><input type="text" name="pom" value={pom} onChange={(e) => setPom(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arrow-down.svg" alt="" />
+                        src="arr-down.png" alt="" />
                 </div>
             </div>
             <div className="storage-unit">
                 <div className="storage-unit-prefix">Стеллаж</div>
                 <div className="storage-unit-container">
                     <div className="storage-unit-text"><input type="text" name="stellaj" value={stellaj} onChange={(e) => setStellaj(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arrow-down.svg" alt="" />
+                        src="arr-down.png" alt="" />
                 </div>
             </div>
             <div className="storage-unit">
                 <div className="storage-unit-prefix">Секция</div>
                 <div className="storage-unit-container">
                     <div className="storage-unit-text"><input type="text" name="section" value={section} onChange={(e) => setSection(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arrow-down.svg" alt="" />
+                        src="arr-down.png" alt="" />
                 </div>
                 <div className="disabling-element" style={{position: 'absolute', inset: '0px', zIndex: '5'}}></div>
             </div>
@@ -187,14 +272,14 @@ function Sklad() {
                 <div className="storage-unit-prefix">Ярус</div>
                 <div className="storage-unit-container">
                     <div className="storage-unit-text"><input type="text" name="jarus" value={jarus} onChange={(e) => setJarus(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arrow-down.svg" alt="" />
+                        src="arr-down.png" alt="" />
                 </div>
             </div>
                 <div className="storage-unit">
                     <div className="storage-unit-prefix">Ячейка</div>
                     <div className="storage-unit-container">
                         <div className="storage-unit-text"><input type="text" name="jacheika" value={jacheika} onChange={(e) => setJacheika(e.target.value)}/></div><img className="storage-unit-arrow"
-                            src="arrow-down.svg" alt="" />
+                            src="arr-down.png" alt="" />
                     </div>
                 </div>
                 <button className="storage__submit">Поиск</button>

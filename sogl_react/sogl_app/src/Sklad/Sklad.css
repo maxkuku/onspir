@@ -4,6 +4,46 @@
   gap: 1em;
   padding: 1em;
 }
+.storageWrap .items {
+  display: flex;
+  flex-wrap: wrap;
+}
+.storageWrap .items .item_info_button {
+  background: linear-gradient(90deg, rgba(68, 68, 68, 0.3) 0%, rgba(68, 68, 68, 0.65) 100%);
+  transition: 0.3s;
+}
+.storageWrap .items .item_info_button:hover {
+  background: linear-gradient(90deg, rgba(68, 68, 68, 0.4) 0%, rgba(68, 68, 68, 0.7) 100%);
+}
+.storageWrap .storage .storage-unit .storage-unit-container {
+  background: #F5F5F5;
+  border-radius: 10px;
+  box-shadow: unset;
+  padding: 0 20px;
+  height: 55px;
+}
+.storageWrap .storage .storage-unit .storage-unit-container .storage-unit-text input {
+  background-color: transparent;
+}
+.storageWrap .storage .storage-unit .storage-unit-container .storage-unit-text input::-moz-placeholder {
+  font-size: 13px;
+  line-height: 15px;
+  color: #928F8F;
+}
+.storageWrap .storage .storage-unit .storage-unit-container .storage-unit-text input:-ms-input-placeholder {
+  font-size: 13px;
+  line-height: 15px;
+  color: #928F8F;
+}
+.storageWrap .storage .storage-unit .storage-unit-container .storage-unit-text input::placeholder {
+  font-size: 13px;
+  line-height: 15px;
+  color: #928F8F;
+}
+.storageWrap .storage .storage-unit .storage-unit-container .storage-unit-arrow {
+  height: 27px;
+  width: 27px;
+}
 
 @media (max-width: 1200px) {
   .storageWrap {
