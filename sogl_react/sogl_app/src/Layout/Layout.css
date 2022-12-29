@@ -1,0 +1,15 @@
+nav {
+  display: flex;
+  padding: 1em;
+  background: #eee;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul li {
+  padding: 1em;
+}
+nav ul li:hover {
+  background-color: azure;
+}/*# sourceMappingURL=Layout.css.map */

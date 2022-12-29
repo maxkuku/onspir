@@ -433,6 +433,7 @@ select.nonappear {
   padding: 0px 24px 5px 12px;
   border-radius: 0 0 10px 10px;
   position: relative;
+  margin-top: 14px;
 }
 .objects-list .m-comments-here {
   z-index: 4;

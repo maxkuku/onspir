@@ -1,12 +1,26 @@
-
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import Layout from './Layout/Layout'
 import Sogl from './sogl_form/Sogl';
+import Sklad from './Sklad/Sklad'
+import Nopage from './Nopage/Nopage'
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <Sogl/>
-    </div>
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="sogl" element={<Sogl />} />
+            <Route path="sklad" element={<Sklad />} />
+            <Route path="*" element={<Nopage />} />
+          </Route>
+        </Routes>
+    </BrowserRouter>
+    
   );
 }
 

@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"Sklad.css"}
+{"version":3,"sources":["Sklad.scss","Sklad.css"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,gCAAA;EACA,QAAA;EACA,YAAA;ACCJ;;ADEA;EACI;IACI,0BAAA;ECCN;EDCE;IACI,aAAA;ECCN;AACF;ADEA;EACI;IACI,aAAA;IACA,8BAAA;ECAN;AACF","file":"Sklad.css"}
