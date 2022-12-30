@@ -27,6 +27,10 @@
                 padding: 0 20px;
                 height: 55px;
 
+                & + .storage-unit-modal {
+                    display: none;
+                }
+
                 .storage-unit-text {
                     input {
                         background-color: transparent;

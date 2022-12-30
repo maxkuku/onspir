@@ -1,6 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import "./Sklad.css"
 import { useState } from "react";
+
+
+
+const observer = new IntersectionObserver((entries) => {
+    if(entries[0].isIntersecting){
+         return true
+    } else {
+         return false
+    }
+});
+
+
+
+const openModal = () => {
+    document.querySelectorAll('.storage-unit-arrow').forEach(elm => {
+        
+        elm.addEventListener('click', (ev) => {
+            
+
+            if(!observer.observe(ev.target)) {
+                ev.target.closest('.storage-unit').querySelector('.storage-unit-modal').style.display = 'block'
+            }
+            else {
+                ev.target.closest('.storage-unit').querySelector('.storage-unit-modal').style.display = 'none'
+            }
+        })
+    })   
+}
+
+
+
 
 
 
@@ -22,15 +53,17 @@ function Sklad() {
     const [jarus, setJarus] = useState("");
     const [jacheika, setJacheika] = useState("");
 
-    // const [searchParam, setSearchParam] = new useState(["title", "address", "sklad", "pom", "stellaj", "section", "jarus", "jacheika"]);
 
-    let skladList = [];
-    let pomList = [];
-    let stellajList = [];
-    let sectionList = [];
-    let jarusList = [];
-    let jacheikaList = [];
-    let skladListF;
+    
+
+
+    let skladList = useMemo(() => [], []);
+    let pomList = useMemo(() => [], []);
+    let stellajList = useMemo(() => [], []);
+    let sectionList = useMemo(() => [], []);
+    let jarusList = useMemo(() => [], []);
+    let jacheikaList = useMemo(() => [], []);
+
 
     useEffect(() => {
       fetch("Items.js")
@@ -43,29 +76,31 @@ function Sklad() {
 
             
             result.forEach(element => {
-                if(!skladList.includes(element.sklad))
+                if(!skladList.includes(element.sklad) && undefined !== element.sklad) {
                     skladList.push(element.sklad);
-                if(!pomList.includes(element.pom))
+                }
+                    
+                if(!pomList.includes(element.pom) && undefined !== element.pom) {
                     pomList.push(element.pom);  
-                if(!stellajList.includes(element.stellaj))
+                }
+                    
+                if(!stellajList.includes(element.stellaj) && undefined !== element.stellaj) {
                     stellajList.push(element.stellaj);
-                if(!sectionList.includes(element.section))
+                }
+                    
+                if(!sectionList.includes(element.section) && undefined !== element.section) {
                     sectionList.push(element.section); 
-                if(!jarusList.includes(element.jarus))
-                    jarusList.push(element.jarus);  
-                if(!jacheikaList.includes(element.jacheika))
+                }
+
+                if(!jarusList.includes(element.jarus) && undefined !== element.jarus) {
+                    jarusList.push(element.jarus);
+                }
+
+                if(!jacheikaList.includes(element.jacheika) && undefined !== element.jacheika) {
                     jacheikaList.push(element.jacheika);             
+                }
             });
 
-
-            
-            skladListF() { 
-                return skladList.map((el,i) => {
-                    return (
-                        <div key={i} className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={document.querySelector('[name=sklad]').value = el}>{el}</div>
-                    );
-                })
-            }
 
             
             let updatedResult = [...result];
@@ -86,30 +121,30 @@ function Sklad() {
             }
             if(pom !== '') {
                 updatedResult = updatedResult.filter((item) => {
-                    return item.pom.toLowerCase().indexOf(pom.toLowerCase()) !== -1
+                    return item.pom === pom
                 })
             }
             if(stellaj !== '') {
                 updatedResult = updatedResult.filter((item) => {
-                    return item.stellaj.toLowerCase().indexOf(stellaj.toLowerCase()) !== -1
+                    return item.stellaj === stellaj
                 })
             }
             if(section !== '') {
                 updatedResult = updatedResult.filter((item) => {
-                    return item.section.toLowerCase().indexOf(section.toLowerCase()) !== -1
+                    return item.section === section
                 })
             }
             if(jarus !== '') {
                 updatedResult = updatedResult.filter((item) => {
-                    return item.jarus.toLowerCase().indexOf(jarus.toLowerCase()) !== -1
+                    return item.jarus === jarus
                 })
             }
             if(jacheika !== '') {
                 updatedResult = updatedResult.filter((item) => {
-                    return item.jacheika.toLowerCase().indexOf(jacheika.toLowerCase()) !== -1
+                    return item.jacheika === jacheika
                 })
             }
-            setItems(updatedResult);
+            setItems(updatedResult.slice(0,20));
           },
 
           // Note: it's important to handle errors here
@@ -121,7 +156,7 @@ function Sklad() {
             setError(error);
           }
         )
-    }, [title, address, sklad, pom, stellaj, section, jarus, jacheika])
+    }, [title, address, sklad, pom, stellaj, section, jarus, jacheika, jacheikaList, jarusList, pomList, sectionList, skladList, stellajList])
 
 
     if (error) {
@@ -132,7 +167,16 @@ function Sklad() {
       return (
 
 
+
+
         <div className="storageWrap">
+
+
+
+
+
+
+
         <div className="searchArea">
             <div className="searchResults">
 
@@ -163,9 +207,9 @@ function Sklad() {
 
 
 
-                        {items.map(item => (
+                        {items.map((item, iter) => (
 
-<div key={item.id} className="item" style={{width: '200px'}}>
+<div key={item.code} className="item" style={{width: '200px'}} data-pom={item.pom} data-stellaj={item.stellaj} data-section={item.section} data-jarus={item.jarus} data-jacheika={item.jacheika}>
     <div className="for_item" style={{maxWidth: '200px', height: '140px'}}>
     <a href={item.link}>
         <img
@@ -175,10 +219,10 @@ function Sklad() {
             </a>
             <svg width="19" height="16"
                 viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="favorites_icon">
-        <path
-            d="M0 5.26362C0 8.97604 3.41541 12.6275 8.81118 15.7647C9.01208 15.878 9.29909 16 9.5 16C9.70091 16 9.98792 15.878 10.1984 15.7647C15.5846 12.6275 19 8.97604 19 5.26362C19 2.17865 16.6752 0 13.5755 0C11.8056 0 10.3706 0.766885 9.5 1.94336C8.64854 0.775599 7.19436 0 5.42447 0C2.32477 0 0 2.17865 0 5.26362ZM1.54028 5.26362C1.54028 2.94553 3.1858 1.40305 5.40534 1.40305C7.20393 1.40305 8.23716 2.42266 8.84945 3.29412C9.10775 3.6427 9.27039 3.73856 9.5 3.73856C9.72961 3.73856 9.87311 3.63399 10.1506 3.29412C10.8107 2.44009 11.8056 1.40305 13.5947 1.40305C15.8142 1.40305 17.4597 2.94553 17.4597 5.26362C17.4597 8.50545 13.6999 12 9.70091 14.4227C9.60524 14.4837 9.53827 14.5272 9.5 14.5272C9.46173 14.5272 9.39476 14.4837 9.30866 14.4227C5.3001 12 1.54028 8.50545 1.54028 5.26362Z"
-            fill="#444444"></path>
-    </svg>
+                <path
+                    d="M0 5.26362C0 8.97604 3.41541 12.6275 8.81118 15.7647C9.01208 15.878 9.29909 16 9.5 16C9.70091 16 9.98792 15.878 10.1984 15.7647C15.5846 12.6275 19 8.97604 19 5.26362C19 2.17865 16.6752 0 13.5755 0C11.8056 0 10.3706 0.766885 9.5 1.94336C8.64854 0.775599 7.19436 0 5.42447 0C2.32477 0 0 2.17865 0 5.26362ZM1.54028 5.26362C1.54028 2.94553 3.1858 1.40305 5.40534 1.40305C7.20393 1.40305 8.23716 2.42266 8.84945 3.29412C9.10775 3.6427 9.27039 3.73856 9.5 3.73856C9.72961 3.73856 9.87311 3.63399 10.1506 3.29412C10.8107 2.44009 11.8056 1.40305 13.5947 1.40305C15.8142 1.40305 17.4597 2.94553 17.4597 5.26362C17.4597 8.50545 13.6999 12 9.70091 14.4227C9.60524 14.4837 9.53827 14.5272 9.5 14.5272C9.46173 14.5272 9.39476 14.4837 9.30866 14.4227C5.3001 12 1.54028 8.50545 1.54028 5.26362Z"
+                    fill="#444444"></path>
+            </svg>
     <div className="picture_icon">
         <form id="my_pictures-form_{item.id}" className="pictures-form"
             encType="multipart/form-data" method="post"
@@ -242,44 +286,72 @@ function Sklad() {
                 <div className="storage-unit-prefix">Склад</div>
                 <div className="storage-unit-container">
                     <div className="storage-unit-text"><input type="text" name="sklad" value={sklad} onChange={(e) => setSklad(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arr-down.png" alt="" />
-                        {skladListF}
+                        src="arr-down.png" alt="open" onClick={openModal} />
+                </div>
+                <div className="storage-unit-modal">
+                {skladList.map((el) => {
+                    return <div><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}}  onClick={(e) => setSklad(el)}>Склад №{el}</div></div>;
+                })}
                 </div>
             </div>
             <div className="storage-unit">
                 <div className="storage-unit-prefix">Помещение</div>
                 <div className="storage-unit-container">
                     <div className="storage-unit-text"><input type="text" name="pom" value={pom} onChange={(e) => setPom(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arr-down.png" alt="" />
+                        src="arr-down.png" alt="open" onClick={openModal} />
+                </div>
+                <div className="storage-unit-modal">
+                {pomList.map(el => {
+                    return <div><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={(e) => setPom(el)}>Помещение №{el}</div></div>;
+                })}
                 </div>
             </div>
             <div className="storage-unit">
                 <div className="storage-unit-prefix">Стеллаж</div>
                 <div className="storage-unit-container">
                     <div className="storage-unit-text"><input type="text" name="stellaj" value={stellaj} onChange={(e) => setStellaj(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arr-down.png" alt="" />
+                        src="arr-down.png" alt="open" onClick={openModal} />
+                </div>
+                <div className="storage-unit-modal">
+                {stellajList.map(el => {
+                    return <div><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={(e) => setStellaj(el)}>{el}</div></div>;
+                })}
                 </div>
             </div>
             <div className="storage-unit">
                 <div className="storage-unit-prefix">Секция</div>
                 <div className="storage-unit-container">
                     <div className="storage-unit-text"><input type="text" name="section" value={section} onChange={(e) => setSection(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arr-down.png" alt="" />
+                        src="arr-down.png" alt="open" onClick={openModal} />
                 </div>
-                <div className="disabling-element" style={{position: 'absolute', inset: '0px', zIndex: '5'}}></div>
+                <div className="storage-unit-modal">
+                {sectionList.map(el => {
+                    return <div><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={(e) => setSection(el)}>{el}</div></div>;
+                })}
+                </div>
             </div>
             <div className="storage-unit">
                 <div className="storage-unit-prefix">Ярус</div>
                 <div className="storage-unit-container">
                     <div className="storage-unit-text"><input type="text" name="jarus" value={jarus} onChange={(e) => setJarus(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arr-down.png" alt="" />
+                        src="arr-down.png" alt="open" onClick={openModal} />
+                </div>
+                <div className="storage-unit-modal">
+                {jarusList.map(el => {
+                    return <div><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={(e) => setJarus(el)}>{el}</div></div>;
+                })}
                 </div>
             </div>
                 <div className="storage-unit">
                     <div className="storage-unit-prefix">Ячейка</div>
                     <div className="storage-unit-container">
                         <div className="storage-unit-text"><input type="text" name="jacheika" value={jacheika} onChange={(e) => setJacheika(e.target.value)}/></div><img className="storage-unit-arrow"
-                            src="arr-down.png" alt="" />
+                            src="arr-down.png" alt="open" onClick={openModal} />
+                    </div>
+                    <div className="storage-unit-modal">
+                    {jacheikaList.map(el => {
+                        return <div><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={(e) => setJacheika(el)}>{el}</div></div>;
+                    })}
                     </div>
                 </div>
                 <button className="storage__submit">Поиск</button>
