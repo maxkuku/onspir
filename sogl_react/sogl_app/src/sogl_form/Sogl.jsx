@@ -81,8 +81,10 @@ return (
                             <div className='object-flexed__first paddingLeft20'>
                                 <div className="object-flexed__title">Объект</div>
                                 <div className="object-flexed__head">
-                                    <div className="object-flexed__green object-flexed__head-left">Заявка #77898 от 01.12.2022 г.</div>
-                                    <div className="object-flexed__snab object-flexed__head-right">Снабжение<span>Мокров Сергей</span></div>
+                                    <div className="object-flexed__green object-flexed__head-left">Заявка #77898 от
+                                        01.12.2022 г.</div>
+                                    <div className="object-flexed__snab object-flexed__head-right">Снабжение<span>Мокров
+                                            Сергей</span></div>
                                 </div>
                                 <div className="object-flexed__head">
                                     <div className='object-flexed__head-left'>Электроинструменты</div>
@@ -131,10 +133,10 @@ return (
 
                             <div className='object-flexed__first'>
                                 <div className="object-flexed__title doflex">
-                                   <div className='object-flexed__title-ooo'>
+                                    <div className='object-flexed__title-ooo'>
                                         <span className="object-flexed__title-compname">ООО ВЕГА</span>
                                         <span>(СС)</span>
-                                   </div>
+                                    </div>
                                     <div className="object-flexed__title-sum">156 221,01</div>
                                 </div>
                                 <div className="object-flexed__head">
@@ -164,10 +166,11 @@ return (
 
 
                             <div className="object-flexed__first doflex">
-                                <div className="object-flexed__title" title="ИП Петров-Иванов Всеволод Петрович">ИП Петров-Иванов Всеволод Петрович</div>
-                                <div className="object-flexed__title gray">№ 
-                                <span className="object-flexed__obnum">2345</span> 
-                                <span className="object-flexed__obdate">17.12.2022</span>
+                                <div className="object-flexed__title" title="ИП Петров-Иванов Всеволод Петрович">ИП
+                                    Петров-Иванов Всеволод Петрович</div>
+                                <div className="object-flexed__title gray">№
+                                    <span className="object-flexed__obnum">2345</span>
+                                    <span className="object-flexed__obdate">17.12.2022</span>
                                 </div>
 
                                 <div className="object-flexed__first-last">
@@ -179,9 +182,9 @@ return (
                             </div>
 
 
-                            
 
-                            
+
+
 
                             <div className="object-flexed__second">
                                 <div className="ob-sogl">
@@ -209,8 +212,8 @@ return (
 
 
                     <div className="object-last">
-                        
-                        <Line persent='45'/>
+
+                        <Line persent='45' />
                     </div>
 
 
@@ -267,7 +270,7 @@ return (
                     </div>
 
 
-                    <Plan zatr="7984100" plan_b="22548714.3" sum_s="456221.01"/>
+                    <Plan zatr="7984100" plan_b="22548714.3" sum_s="456221.01" />
                 </div>
 
             </div>
@@ -287,8 +290,10 @@ return (
                             <div className='object-flexed__first paddingLeft20'>
                                 <div className="object-flexed__title">Объект</div>
                                 <div className="object-flexed__head">
-                                    <div className="object-flexed__green object-flexed__head-left">Заявка #77898 от 01.12.2022 г.</div>
-                                    <div className="object-flexed__snab object-flexed__head-right">Снабжение<span>Мокров Сергей</span></div>
+                                    <div className="object-flexed__green object-flexed__head-left">Заявка #77898 от
+                                        01.12.2022 г.</div>
+                                    <div className="object-flexed__snab object-flexed__head-right">Снабжение<span>Мокров
+                                            Сергей</span></div>
                                 </div>
                                 <div className="object-flexed__head">
                                     <div className='object-flexed__head-left'>Электроинструменты</div>
@@ -337,10 +342,10 @@ return (
 
                             <div className='object-flexed__first'>
                                 <div className="object-flexed__title doflex">
-                                   <div className='object-flexed__title-ooo'>
+                                    <div className='object-flexed__title-ooo'>
                                         <span className="object-flexed__title-compname">ООО ВЕГА</span>
                                         <span>(СС)</span>
-                                   </div>
+                                    </div>
                                     <div className="object-flexed__title-sum">156 221,01</div>
                                 </div>
                                 <div className="object-flexed__head">
@@ -370,10 +375,11 @@ return (
 
 
                             <div className="object-flexed__first doflex">
-                                <div className="object-flexed__title" title="ИП Петров-Иванов Всеволод Петрович">ИП Петров-Иванов Всеволод Петрович</div>
-                                <div className="object-flexed__title gray">№ 
-                                <span className="object-flexed__obnum">2345</span> 
-                                <span className="object-flexed__obdate">17.12.2022</span>
+                                <div className="object-flexed__title" title="ИП Петров-Иванов Всеволод Петрович">ИП
+                                    Петров-Иванов Всеволод Петрович</div>
+                                <div className="object-flexed__title gray">№
+                                    <span className="object-flexed__obnum">2345</span>
+                                    <span className="object-flexed__obdate">17.12.2022</span>
                                 </div>
 
                                 <div className="object-flexed__first-last">
@@ -385,9 +391,9 @@ return (
                             </div>
 
 
-                            
 
-                            
+
+
 
                             <div className="object-flexed__second">
                                 <div className="ob-sogl">
@@ -415,7 +421,7 @@ return (
 
 
                     <div className="object-last">
-                    <Line persent='50'/>
+                        <Line persent='50' />
                     </div>
 
 
@@ -472,7 +478,7 @@ return (
                     </div>
 
 
-                    <Plan zatr="8984100" plan_b="12548714.5" sum_s="256220.65"/>
+                    <Plan zatr="8984100" plan_b="12548714.5" sum_s="256220.65" />
                 </div>
 
             </div>
@@ -489,8 +495,10 @@ return (
                             <div className='object-flexed__first paddingLeft20'>
                                 <div className="object-flexed__title">Объект</div>
                                 <div className="object-flexed__head">
-                                    <div className="object-flexed__green object-flexed__head-left">Заявка #77898 от 01.12.2022 г.</div>
-                                    <div className="object-flexed__snab object-flexed__head-right">Снабжение<span>Мокров Сергей</span></div>
+                                    <div className="object-flexed__green object-flexed__head-left">Заявка #77898 от
+                                        01.12.2022 г.</div>
+                                    <div className="object-flexed__snab object-flexed__head-right">Снабжение<span>Мокров
+                                            Сергей</span></div>
                                 </div>
                                 <div className="object-flexed__head">
                                     <div className='object-flexed__head-left'>Электроинструменты</div>
@@ -539,10 +547,10 @@ return (
 
                             <div className='object-flexed__first'>
                                 <div className="object-flexed__title doflex">
-                                   <div className='object-flexed__title-ooo'>
+                                    <div className='object-flexed__title-ooo'>
                                         <span className="object-flexed__title-compname">ООО ВЕГА</span>
                                         <span>(СС)</span>
-                                   </div>
+                                    </div>
                                     <div className="object-flexed__title-sum">156 221,01</div>
                                 </div>
                                 <div className="object-flexed__head">
@@ -572,10 +580,11 @@ return (
 
 
                             <div className="object-flexed__first doflex">
-                                <div className="object-flexed__title" title="ИП Петров-Иванов Всеволод Петрович">ИП Петров-Иванов Всеволод Петрович</div>
-                                <div className="object-flexed__title gray">№ 
-                                <span className="object-flexed__obnum">2345</span> 
-                                <span className="object-flexed__obdate">17.12.2022</span>
+                                <div className="object-flexed__title" title="ИП Петров-Иванов Всеволод Петрович">ИП
+                                    Петров-Иванов Всеволод Петрович</div>
+                                <div className="object-flexed__title gray">№
+                                    <span className="object-flexed__obnum">2345</span>
+                                    <span className="object-flexed__obdate">17.12.2022</span>
                                 </div>
 
                                 <div className="object-flexed__first-last">
@@ -587,9 +596,9 @@ return (
                             </div>
 
 
-                            
 
-                            
+
+
 
                             <div className="object-flexed__second">
                                 <div className="ob-sogl">
@@ -617,7 +626,7 @@ return (
 
 
                     <div className="object-last">
-                    <Line persent='65'/>
+                        <Line persent='65' />
                     </div>
 
 
@@ -674,7 +683,7 @@ return (
                     </div>
 
 
-                    <Plan zatr="5985100" plan_b="11008714.5" sum_s="356220.65"/>
+                    <Plan zatr="5985100" plan_b="11008714.5" sum_s="356220.65" />
                 </div>
 
             </div>
