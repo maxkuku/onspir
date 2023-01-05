@@ -31,6 +31,10 @@
                     display: none;
                 }
 
+                & + [data-state="true"] {
+                    display: block;
+                }
+
                 .storage-unit-text {
                     input {
                         background-color: transparent;
