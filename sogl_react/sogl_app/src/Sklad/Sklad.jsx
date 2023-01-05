@@ -1,38 +1,7 @@
 import React, { useEffect, useMemo } from "react";
 import "./Sklad.css"
 import { useState } from "react";
-
-
-
-const observer = new IntersectionObserver((entries) => {
-    if(entries[0].isIntersecting){
-         return true
-    } else {
-         return false
-    }
-});
-
-
-
-const openModal = () => {
-    document.querySelectorAll('.storage-unit-arrow').forEach(elm => {
-        
-        elm.addEventListener('click', (ev) => {
-            
-
-            if(!observer.observe(ev.target)) {
-                ev.target.closest('.storage-unit').querySelector('.storage-unit-modal').style.display = 'block'
-            }
-            else {
-                ev.target.closest('.storage-unit').querySelector('.storage-unit-modal').style.display = 'none'
-            }
-        })
-    })   
-}
-
-
-
-
+import { nanoid } from 'nanoid';
 
 
 function Sklad() {
@@ -40,18 +9,16 @@ function Sklad() {
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
 
-    // Note: the empty deps array [] means
-    // this useEffect will run once
-    // similar to componentDidMount()
+
 
     const [title, setTitle] = useState("");
     const [address, setAddress] = useState("");
     const [sklad, setSklad] = useState("");
     const [pom, setPom] = useState("");
-    const [stellaj, setStellaj] = useState("");
+    const [stell, setStell] = useState("");
     const [section, setSection] = useState("");
-    const [jarus, setJarus] = useState("");
-    const [jacheika, setJacheika] = useState("");
+    const [level, setLevel] = useState("");
+    const [cell, setCell] = useState("");
 
 
     
@@ -59,10 +26,21 @@ function Sklad() {
 
     let skladList = useMemo(() => [], []);
     let pomList = useMemo(() => [], []);
-    let stellajList = useMemo(() => [], []);
+    let stellList = useMemo(() => [], []);
     let sectionList = useMemo(() => [], []);
-    let jarusList = useMemo(() => [], []);
-    let jacheikaList = useMemo(() => [], []);
+    let levelList = useMemo(() => [], []);
+    let cellList = useMemo(() => [], []);
+
+
+    const [skladListState, setSkladListState] = useState(false)
+    const [pomListState, setPomListState] = useState(false)
+    const [stellListState, setStellListState] = useState(false)
+    const [sectionListState, setSectionListState] = useState(false)
+    const [levelListState, setLevelListState] = useState(false)
+    const [cellListState, setCellListState] = useState(false)
+
+
+
 
 
     useEffect(() => {
@@ -70,11 +48,11 @@ function Sklad() {
         .then(res => res.json())
         .then(
           (result) => {
-            // console.log(result)
+            
             setIsLoaded(true);
 
 
-            
+            // save lists
             result.forEach(element => {
                 if(!skladList.includes(element.sklad) && undefined !== element.sklad) {
                     skladList.push(element.sklad);
@@ -84,22 +62,31 @@ function Sklad() {
                     pomList.push(element.pom);  
                 }
                     
-                if(!stellajList.includes(element.stellaj) && undefined !== element.stellaj) {
-                    stellajList.push(element.stellaj);
+                if(!stellList.includes(element.stell) && undefined !== element.stell) {
+                    stellList.push(element.stell);
                 }
                     
                 if(!sectionList.includes(element.section) && undefined !== element.section) {
                     sectionList.push(element.section); 
                 }
 
-                if(!jarusList.includes(element.jarus) && undefined !== element.jarus) {
-                    jarusList.push(element.jarus);
+                if(!levelList.includes(element.level) && undefined !== element.level) {
+                    levelList.push(element.level);
                 }
 
-                if(!jacheikaList.includes(element.jacheika) && undefined !== element.jacheika) {
-                    jacheikaList.push(element.jacheika);             
+                if(!cellList.includes(element.cell) && undefined !== element.cell) {
+                    cellList.push(element.cell);             
                 }
             });
+
+
+            // filter
+            skladList = Array.from(new Set(skladList.sort()))
+            pomList = Array.from(new Set(pomList.sort()))
+            stellList = Array.from(new Set(stellList.sort()))
+            sectionList = Array.from(new Set(sectionList.sort()))
+            levelList = Array.from(new Set(levelList.sort()))
+            cellList = Array.from(new Set(cellList.sort()))
 
 
             
@@ -116,7 +103,7 @@ function Sklad() {
             }
             if(sklad !== '') {
                 updatedResult = updatedResult.filter((item) => {
-                    return item.sklad.toLowerCase().indexOf(sklad.toLowerCase()) !== -1
+                    return item.sklad === sklad
                 })
             }
             if(pom !== '') {
@@ -124,9 +111,9 @@ function Sklad() {
                     return item.pom === pom
                 })
             }
-            if(stellaj !== '') {
+            if(stell !== '') {
                 updatedResult = updatedResult.filter((item) => {
-                    return item.stellaj === stellaj
+                    return item.stell === stell
                 })
             }
             if(section !== '') {
@@ -134,29 +121,27 @@ function Sklad() {
                     return item.section === section
                 })
             }
-            if(jarus !== '') {
+            if(level !== '') {
                 updatedResult = updatedResult.filter((item) => {
-                    return item.jarus === jarus
+                    return item.level === level
                 })
             }
-            if(jacheika !== '') {
+            if(cell !== '') {
                 updatedResult = updatedResult.filter((item) => {
-                    return item.jacheika === jacheika
+                    return item.cell === cell
                 })
             }
             setItems(updatedResult.slice(0,20));
           },
 
-          // Note: it's important to handle errors here
-          // instead of a catch() block so that we don't swallow
-          // exceptions from actual bugs in components.
+          
 
           (error) => {
             setIsLoaded(true);
             setError(error);
           }
         )
-    }, [title, address, sklad, pom, stellaj, section, jarus, jacheika, jacheikaList, jarusList, pomList, sectionList, skladList, stellajList])
+    }, [title, address, sklad, pom, stell, section, level, cell, cellList, levelList, pomList, sectionList, skladList, stellList])
 
 
     if (error) {
@@ -207,9 +192,9 @@ function Sklad() {
 
 
 
-                        {items.map((item, iter) => (
+                        {items.map((item) => (
 
-<div key={item.code} className="item" style={{width: '200px'}} data-pom={item.pom} data-stellaj={item.stellaj} data-section={item.section} data-jarus={item.jarus} data-jacheika={item.jacheika}>
+<div key={nanoid()} className="item" style={{width: '200px'}} data-pom={item.pom} data-stell={item.stell} data-section={item.section} data-level={item.level} data-cell={item.cell}>
     <div className="for_item" style={{maxWidth: '200px', height: '140px'}}>
     <a href={item.link}>
         <img
@@ -224,12 +209,12 @@ function Sklad() {
                     fill="#444444"></path>
             </svg>
     <div className="picture_icon">
-        <form id="my_pictures-form_{item.id}" className="pictures-form"
+        <form id={`my_pictures-form_${item.id}`} className="pictures-form"
             encType="multipart/form-data" method="post"
-            action="{item.href}">
-            <p><input type="file" name="file" id="file{item.id}"
+            action={item.href}>
+            <p><input type="file" name="file" id={`file${item.id}`}
                 className="input input__file" />
-                <label htmlFor="file{item.id}"
+                <label htmlFor={`file${item.id}`}
                     className="input__file-img">
                         <span className="input__file-icon-wrapper">
                             <img
@@ -285,36 +270,37 @@ function Sklad() {
             <div className="storage-unit">
                 <div className="storage-unit-prefix">Склад</div>
                 <div className="storage-unit-container">
-                    <div className="storage-unit-text"><input type="text" name="sklad" value={sklad} onChange={(e) => setSklad(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arr-down.png" alt="open" onClick={openModal} />
+                    <div className="storage-unit-text"><input type="text" name="sklad" value={sklad} onChange={(e) => {setSklad(e.target.value); console.log(sklad)}}/></div><img className="storage-unit-arrow"
+                        src="arr-down.png" alt="open" onClick={() => setSkladListState(true) ? setSkladListState(false) : setSkladListState(true)} />
                 </div>
-                <div className="storage-unit-modal">
+                <div className="storage-unit-modal" data-state={skladListState}>
                 {skladList.map((el) => {
-                    return <div><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}}  onClick={(e) => setSklad(el)}>Склад №{el}</div></div>;
+                    return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}}  onClick={el => setSklad(el)}>Склад №{el}</div></div>;
                 })}
                 </div>
             </div>
             <div className="storage-unit">
                 <div className="storage-unit-prefix">Помещение</div>
                 <div className="storage-unit-container">
-                    <div className="storage-unit-text"><input type="text" name="pom" value={pom} onChange={(e) => setPom(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arr-down.png" alt="open" onClick={openModal} />
+                    <div className="storage-unit-text"><input type="text" name="pom" value={pom} onChange={(e) => {setPom(e.target.value); console.log(e.target.value)}}/></div><img className="storage-unit-arrow"
+                        src="arr-down.png" alt="open" onClick={() => setPomListState(true) ? setPomListState(false) : setPomListState(true)} />
                 </div>
-                <div className="storage-unit-modal">
+                <div className="storage-unit-modal" data-state={pomListState}>
                 {pomList.map(el => {
-                    return <div><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={(e) => setPom(el)}>Помещение №{el}</div></div>;
+                    
+                    return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={el => setPom(el)}>Помещение №{el}</div></div>;
                 })}
                 </div>
             </div>
             <div className="storage-unit">
                 <div className="storage-unit-prefix">Стеллаж</div>
                 <div className="storage-unit-container">
-                    <div className="storage-unit-text"><input type="text" name="stellaj" value={stellaj} onChange={(e) => setStellaj(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arr-down.png" alt="open" onClick={openModal} />
+                    <div className="storage-unit-text"><input type="text" name="stell" value={stell} onChange={(e) => setStell(e.target.value)}/></div><img className="storage-unit-arrow"
+                        src="arr-down.png" alt="open" onClick={() => setStellListState(true) ? setStellListState(false) : setStellListState(true)} />
                 </div>
-                <div className="storage-unit-modal">
-                {stellajList.map(el => {
-                    return <div><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={(e) => setStellaj(el)}>{el}</div></div>;
+                <div className="storage-unit-modal" data-state={stellListState}>
+                {stellList.map(el => {
+                    return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={el => setStell(el)}>{el}</div></div>;
                 })}
                 </div>
             </div>
@@ -322,35 +308,35 @@ function Sklad() {
                 <div className="storage-unit-prefix">Секция</div>
                 <div className="storage-unit-container">
                     <div className="storage-unit-text"><input type="text" name="section" value={section} onChange={(e) => setSection(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arr-down.png" alt="open" onClick={openModal} />
+                        src="arr-down.png" alt="open" onClick={() => setSectionListState(true) ? setSectionListState(false) : setSectionListState(true)} />
                 </div>
-                <div className="storage-unit-modal">
+                <div className="storage-unit-modal" data-state={sectionListState}>
                 {sectionList.map(el => {
-                    return <div><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={(e) => setSection(el)}>{el}</div></div>;
+                    return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={el => setSection(el)}>{el}</div></div>;
                 })}
                 </div>
             </div>
             <div className="storage-unit">
                 <div className="storage-unit-prefix">Ярус</div>
                 <div className="storage-unit-container">
-                    <div className="storage-unit-text"><input type="text" name="jarus" value={jarus} onChange={(e) => setJarus(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arr-down.png" alt="open" onClick={openModal} />
+                    <div className="storage-unit-text"><input type="text" name="level" value={level} onChange={(e) => setLevel(e.target.value)}/></div><img className="storage-unit-arrow"
+                        src="arr-down.png" alt="open" onClick={() => setLevelListState(true) ? setLevelListState(false) : setLevelListState(true)} />
                 </div>
-                <div className="storage-unit-modal">
-                {jarusList.map(el => {
-                    return <div><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={(e) => setJarus(el)}>{el}</div></div>;
+                <div className="storage-unit-modal" data-state={levelListState}>
+                {levelList.map(el => {
+                    return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={el => setLevel(el)}>{el}</div></div>;
                 })}
                 </div>
             </div>
                 <div className="storage-unit">
                     <div className="storage-unit-prefix">Ячейка</div>
                     <div className="storage-unit-container">
-                        <div className="storage-unit-text"><input type="text" name="jacheika" value={jacheika} onChange={(e) => setJacheika(e.target.value)}/></div><img className="storage-unit-arrow"
-                            src="arr-down.png" alt="open" onClick={openModal} />
+                        <div className="storage-unit-text"><input type="text" name="cell" value={cell} onChange={(e) => setCell(e.target.value)}/></div><img className="storage-unit-arrow"
+                            src="arr-down.png" alt="open" onClick={() => setCellListState(true) ? setCellListState(false) : setCellListState(true)} />
                     </div>
-                    <div className="storage-unit-modal">
-                    {jacheikaList.map(el => {
-                        return <div><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={(e) => setJacheika(el)}>{el}</div></div>;
+                    <div className="storage-unit-modal" data-state={cellListState}>
+                    {cellList.map(el => {
+                        return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={el => setCell(el)}>{el}</div></div>;
                     })}
                     </div>
                 </div>
