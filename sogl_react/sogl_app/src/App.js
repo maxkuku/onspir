@@ -1,5 +1,9 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 import './App.css';
 import Layout from './Layout/Layout'
 import Sogl from './sogl_form/Sogl';
@@ -10,17 +14,16 @@ import Nopage from './Nopage/Nopage'
 
 function App() {
 
-  return (
-    <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route path="sogl" element={<Sogl />} />
-            <Route path="sklad" element={<Sklad />} />
-            <Route path="*" element={<Nopage />} />
-          </Route>
-        </Routes>
+  return ( <BrowserRouter>
+      <Routes>
+        <Route path = "/" element = {<Layout />}>
+          <Route path = "sogl" element = {<Sogl />}/> 
+          <Route path = "sklad" element = {<Sklad />}/> 
+          <Route path = "*" element = {<Nopage />}/> 
+        </Route> 
+      </Routes> 
     </BrowserRouter>
-    
+
   );
 }
 

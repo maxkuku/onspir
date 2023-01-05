@@ -1,4 +1,5 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link } from 'react-router-dom';
+import { InputMoney } from '../InputMoney/InputMoney';
 import './Layout.css';
 
 const Layout = () => {
@@ -7,18 +8,21 @@ const Layout = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to='/'>Home</Link>
           </li>
           <li>
-            <Link to="/sogl">Sogl</Link>
+            <Link to='/sogl'>Sogl</Link>
           </li>
           <li>
-            <Link to="/sklad">Sklad</Link>
+            <Link to='/sklad'>Sklad</Link>
           </li>
         </ul>
       </nav>
 
       <Outlet />
+      <InputMoney/>
+
+      
     </>
   )
 };

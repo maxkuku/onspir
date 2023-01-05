@@ -45,6 +45,10 @@
                 .storage-unit-arrow {
                     height: 27px;
                     width: 27px;
+
+                    &.opened {
+                        transform: rotate(180deg);
+                    }
                 }
             }
         }

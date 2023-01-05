@@ -1,16 +1,22 @@
 .page-header {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 22% 10% -webkit-max-content 10px -webkit-max-content;
-  grid-template-columns: 22% 10% max-content 10px max-content;
-  align-items: center;
+  -ms-grid-columns: 22% 10% max-content 10px max-content;
+      grid-template-columns: 22% 10% -webkit-max-content 10px -webkit-max-content;
+      grid-template-columns: 22% 10% max-content 10px max-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 35px 20px 20px;
 }
+
 .page-header input {
   color: #928F8F;
   font-size: 14px;
   line-height: 16px;
   background-color: transparent;
 }
+
 .page-header button {
   border: none;
   background-color: transparent;
@@ -20,14 +26,18 @@
   width: max-content;
   cursor: pointer;
 }
+
 .page-header span {
   color: #928F8F;
 }
+
 .page-header button.active {
   color: #444;
 }
+
 .page-header h1 {
   font-weight: 500;
   line-height: 21px;
   font-size: 18px;
-}/*# sourceMappingURL=index.css.map */
+}
+/*# sourceMappingURL=index.css.map */
