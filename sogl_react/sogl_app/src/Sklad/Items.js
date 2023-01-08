@@ -87,11 +87,11 @@
     "addr": "Первый",
     "nomen": "abr-a1",
     "sklad": 1,
-    "pom": "6",
+    "pom": 7,
     "stell": 1,
-    "section": "14",
+    "section": 13,
     "level": 1,
-    "cell": "893",
+    "cell": 893,
     "measure": "шт"
 }, {
     "id": 6,
@@ -102,11 +102,11 @@
     "quan": "Мало",
     "addr": "Первый",
     "sklad": 1,
-    "pom": "6",
+    "pom": 7,
     "stell": 1,
-    "section": "14",
+    "section": 13,
     "level": 1,
-    "cell": "993",
+    "cell": 993,
     "measure": "шт"
 }, {
     "id": 7,
@@ -119,9 +119,9 @@
     "sklad": 1,
     "pom": 1,
     "stell": 2,
-    "section": "14",
+    "section": 13,
     "level": 1,
-    "cell": "23",
+    "cell": 23,
     "measure": "шт"
 }, {
     "id": 8,
@@ -133,9 +133,9 @@
     "sklad": 1,
     "pom": 1,
     "stell": 1,
-    "section": "14",
+    "section": 13,
     "level": 2,
-    "cell": "3",
+    "cell": 3,
     "measure": "шт"
 },
 
@@ -190,7 +190,7 @@
     "sklad": 1,
     "pom": 12,
     "stell": 2,
-    "section": 34,
+    "section": 35,
     "level": 2,
     "cell": 123,
     "measure": "шт"
@@ -204,7 +204,7 @@
     "sklad": 1,
     "pom": 12,
     "stell": 2,
-    "section": 34,
+    "section": 37,
     "level": 2,
     "cell": 123,
     "measure": "шт"
@@ -218,7 +218,7 @@
     "sklad": 1,
     "pom": 12,
     "stell": 2,
-    "section": 34,
+    "section": 38,
     "level": 2,
     "cell": 123,
     "measure": "шт"
@@ -232,7 +232,7 @@
     "sklad": 1,
     "pom": 12,
     "stell": 2,
-    "section": 34,
+    "section": 30,
     "level": 2,
     "cell": 123,
     "measure": "шт"
@@ -246,7 +246,7 @@
     "sklad": 1,
     "pom": 12,
     "stell": 2,
-    "section": 34,
+    "section": 24,
     "level": 2,
     "cell": 123,
     "measure": "шт"
@@ -260,9 +260,9 @@
     "sklad": 1,
     "pom": 12,
     "stell": 2,
-    "section": 34,
+    "section": 25,
     "level": 2,
-    "cell": 123,
+    "cell": 13,
     "measure": "шт"
 },
 {
@@ -276,7 +276,7 @@
     "stell": 2,
     "section": 34,
     "level": 2,
-    "cell": 123,
+    "cell": 13,
     "measure": "шт"
 },
 {
@@ -304,7 +304,7 @@
     "stell": 2,
     "section": 34,
     "level": 2,
-    "cell": 123,
+    "cell": 13,
     "measure": "шт"
 },
 {
@@ -332,7 +332,7 @@
     "stell": 2,
     "section": 34,
     "level": 2,
-    "cell": 123,
+    "cell": 14,
     "measure": "шт"
 },
 {
@@ -486,7 +486,7 @@
     "stell": 2,
     "section": 34,
     "level": 2,
-    "cell": 123,
+    "cell": 15,
     "measure": "шт"
 },
 {
@@ -500,7 +500,7 @@
     "stell": 2,
     "section": 34,
     "level": 2,
-    "cell": 123,
+    "cell": 16,
     "measure": "шт"
 },
 {
@@ -514,7 +514,7 @@
     "stell": 2,
     "section": 34,
     "level": 2,
-    "cell": 123,
+    "cell": 17,
     "measure": "шт"
 },
 {
@@ -528,7 +528,7 @@
     "stell": 2,
     "section": 34,
     "level": 2,
-    "cell": 123,
+    "cell": 18,
     "measure": "шт"
 },
 {
@@ -542,7 +542,7 @@
     "stell": 2,
     "section": 34,
     "level": 2,
-    "cell": 123,
+    "cell": 19,
     "measure": "шт"
 },
 {
@@ -556,7 +556,7 @@
     "stell": 2,
     "section": 34,
     "level": 2,
-    "cell": 123,
+    "cell": 20,
     "measure": "шт"
 },
 {
@@ -570,7 +570,7 @@
     "stell": 2,
     "section": 34,
     "level": 2,
-    "cell": 123,
+    "cell": 21,
     "measure": "шт"
 },
 {
@@ -584,7 +584,7 @@
     "stell": 2,
     "section": 34,
     "level": 2,
-    "cell": 123,
+    "cell": 22,
     "measure": "шт"
 },
 {
@@ -598,7 +598,7 @@
     "stell": 2,
     "section": 34,
     "level": 2,
-    "cell": 123,
+    "cell": 23,
     "measure": "шт"
 },
 {
@@ -612,7 +612,7 @@
     "stell": 2,
     "section": 34,
     "level": 2,
-    "cell": 123,
+    "cell": 24,
     "measure": "шт"
 },
 {
@@ -626,7 +626,7 @@
     "stell": 2,
     "section": 34,
     "level": 2,
-    "cell": 123,
+    "cell": 25,
     "measure": "шт"
 },
 {
@@ -640,7 +640,7 @@
     "stell": 2,
     "section": 34,
     "level": 2,
-    "cell": 123,
+    "cell": 26,
     "measure": "шт"
 },
 {
@@ -708,7 +708,7 @@
     "sklad": 1,
     "pom": 12,
     "stell": 2,
-    "section": 34,
+    "section": 35,
     "level": 2,
     "cell": 123,
     "measure": "шт"
@@ -722,7 +722,7 @@
     "sklad": 1,
     "pom": 12,
     "stell": 2,
-    "section": 34,
+    "section": 36,
     "level": 2,
     "cell": 123,
     "measure": "шт"
@@ -736,7 +736,7 @@
     "sklad": 1,
     "pom": 12,
     "stell": 2,
-    "section": 34,
+    "section": 37,
     "level": 2,
     "cell": 123,
     "measure": "шт"
@@ -750,7 +750,7 @@
     "sklad": 1,
     "pom": 12,
     "stell": 2,
-    "section": 34,
+    "section": 38,
     "level": 2,
     "cell": 123,
     "measure": "шт"

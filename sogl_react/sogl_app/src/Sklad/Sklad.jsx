@@ -1,10 +1,13 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import "./Sklad.css"
-import { useState } from "react";
 import { nanoid } from 'nanoid';
 
 
+
 function Sklad() {
+
+
+
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
@@ -40,7 +43,17 @@ function Sklad() {
     const [cellListState, setCellListState] = useState(false)
 
 
+    // pagination
+    const [pages, setPages] = useState(1);
+    const itemsOnPage = 20;
+    const [itemsAll, setItemsAll] = useState(0);
+    
 
+
+    const calcPagesRange = (updatedResult, pages, itemsOnPage) => {
+        return updatedResult.slice((pages - 1) * itemsOnPage, pages * itemsOnPage)
+    }
+    
 
 
     useEffect(() => {
@@ -50,6 +63,7 @@ function Sklad() {
           (result) => {
             
             setIsLoaded(true);
+            
 
 
             // save lists
@@ -77,10 +91,12 @@ function Sklad() {
                 if(!cellList.includes(element.cell) && undefined !== element.cell) {
                     cellList.push(element.cell);             
                 }
+
             });
 
 
-            // filter
+
+            // filter & sort
             skladList = Array.from(new Set(skladList.sort()))
             pomList = Array.from(new Set(pomList.sort()))
             stellList = Array.from(new Set(stellList.sort()))
@@ -131,7 +147,10 @@ function Sklad() {
                     return item.cell === cell
                 })
             }
-            setItems(updatedResult.slice(0,20));
+
+            setItemsAll(updatedResult.length);
+            setItems( calcPagesRange(updatedResult, pages, itemsOnPage) );
+            
           },
 
           
@@ -141,7 +160,7 @@ function Sklad() {
             setError(error);
           }
         )
-    }, [title, address, sklad, pom, stell, section, level, cell, cellList, levelList, pomList, sectionList, skladList, stellList])
+    }, [title, address, sklad, pom, stell, section, level, cell, cellList, levelList, pomList, sectionList, skladList, stellList, pages, itemsOnPage])
 
 
     if (error) {
@@ -191,7 +210,6 @@ function Sklad() {
                     <div className="items">
 
 
-
                         {items.map((item) => (
 
 <div key={nanoid()} className="item" style={{width: '200px'}} data-pom={item.pom} data-stell={item.stell} data-section={item.section} data-level={item.level} data-cell={item.cell}>
@@ -233,7 +251,7 @@ function Sklad() {
 </div>
 </div>
 
-                            
+
                         ))}
 
 
@@ -241,9 +259,17 @@ function Sklad() {
                 </div>
             </div>
 
-
-
-
+           
+            
+            <div className="paginationHere">
+            { 
+            Array( Math.ceil(itemsAll / itemsOnPage) ).fill().map((element, index) => 
+            (
+                <span key={`page_${index}`} className={ (index + 1) === pages ? `active page` : `page` } data-pages={ pages } onClick={() => setPages(index + 1) }>{index + 1}</span>
+            ))
+            }
+            </div>
+            
           </div>
           <div className="storage">
             <div style={{position: 'absolute', left: '20px', top: '10px'}}>
@@ -270,12 +296,12 @@ function Sklad() {
             <div className="storage-unit">
                 <div className="storage-unit-prefix">Склад</div>
                 <div className="storage-unit-container">
-                    <div className="storage-unit-text"><input type="text" name="sklad" value={sklad} onChange={(e) => {setSklad(e.target.value); console.log(sklad)}}/></div><img className="storage-unit-arrow"
-                        src="arr-down.png" alt="open" onClick={() => setSkladListState(true) ? setSkladListState(false) : setSkladListState(true)} />
+                    <div className="storage-unit-text"><input type="text" name="sklad" value={sklad} onChange={(e) => {setSklad(e.target.value)}}/></div><img className="storage-unit-arrow"
+                        src="arr-down.png" alt="open" onClick={() => setSkladListState(!skladListState)} />
                 </div>
                 <div className="storage-unit-modal" data-state={skladListState}>
                 {skladList.map((el) => {
-                    return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}}  onClick={el => setSklad(el)}>Склад №{el}</div></div>;
+                    return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}}  onClick={() => {setSklad(el); setSkladListState(false)}}>Склад №{el}</div></div>;
                 })}
                 </div>
             </div>
@@ -283,12 +309,12 @@ function Sklad() {
                 <div className="storage-unit-prefix">Помещение</div>
                 <div className="storage-unit-container">
                     <div className="storage-unit-text"><input type="text" name="pom" value={pom} onChange={(e) => {setPom(e.target.value); console.log(e.target.value)}}/></div><img className="storage-unit-arrow"
-                        src="arr-down.png" alt="open" onClick={() => setPomListState(true) ? setPomListState(false) : setPomListState(true)} />
+                        src="arr-down.png" alt="open" onClick={() => setPomListState(!pomListState)} />
                 </div>
                 <div className="storage-unit-modal" data-state={pomListState}>
                 {pomList.map(el => {
                     
-                    return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={el => setPom(el)}>Помещение №{el}</div></div>;
+                    return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={() => {setPom(el); setPomListState(false)}}>Помещение №{el}</div></div>;
                 })}
                 </div>
             </div>
@@ -296,11 +322,11 @@ function Sklad() {
                 <div className="storage-unit-prefix">Стеллаж</div>
                 <div className="storage-unit-container">
                     <div className="storage-unit-text"><input type="text" name="stell" value={stell} onChange={(e) => setStell(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arr-down.png" alt="open" onClick={() => setStellListState(true) ? setStellListState(false) : setStellListState(true)} />
+                        src="arr-down.png" alt="open" onClick={() => setStellListState(!stellListState)} />
                 </div>
                 <div className="storage-unit-modal" data-state={stellListState}>
                 {stellList.map(el => {
-                    return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={el => setStell(el)}>{el}</div></div>;
+                    return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={() => {setStell(el); setStellListState(false)}}>{el}</div></div>;
                 })}
                 </div>
             </div>
@@ -308,11 +334,11 @@ function Sklad() {
                 <div className="storage-unit-prefix">Секция</div>
                 <div className="storage-unit-container">
                     <div className="storage-unit-text"><input type="text" name="section" value={section} onChange={(e) => setSection(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arr-down.png" alt="open" onClick={() => setSectionListState(true) ? setSectionListState(false) : setSectionListState(true)} />
+                        src="arr-down.png" alt="open" onClick={() => setSectionListState(!sectionListState)} />
                 </div>
                 <div className="storage-unit-modal" data-state={sectionListState}>
                 {sectionList.map(el => {
-                    return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={el => setSection(el)}>{el}</div></div>;
+                    return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={() => {setSection(el); setSectionListState(false)}}>{el}</div></div>;
                 })}
                 </div>
             </div>
@@ -320,30 +346,30 @@ function Sklad() {
                 <div className="storage-unit-prefix">Ярус</div>
                 <div className="storage-unit-container">
                     <div className="storage-unit-text"><input type="text" name="level" value={level} onChange={(e) => setLevel(e.target.value)}/></div><img className="storage-unit-arrow"
-                        src="arr-down.png" alt="open" onClick={() => setLevelListState(true) ? setLevelListState(false) : setLevelListState(true)} />
+                        src="arr-down.png" alt="open" onClick={() => setLevelListState(!levelListState)} />
                 </div>
                 <div className="storage-unit-modal" data-state={levelListState}>
                 {levelList.map(el => {
-                    return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={el => setLevel(el)}>{el}</div></div>;
+                    return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={() => {setLevel(el); setLevelListState(false)}}>{el}</div></div>;
                 })}
                 </div>
             </div>
-                <div className="storage-unit">
-                    <div className="storage-unit-prefix">Ячейка</div>
-                    <div className="storage-unit-container">
-                        <div className="storage-unit-text"><input type="text" name="cell" value={cell} onChange={(e) => setCell(e.target.value)}/></div><img className="storage-unit-arrow"
-                            src="arr-down.png" alt="open" onClick={() => setCellListState(true) ? setCellListState(false) : setCellListState(true)} />
-                    </div>
-                    <div className="storage-unit-modal" data-state={cellListState}>
-                    {cellList.map(el => {
-                        return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={el => setCell(el)}>{el}</div></div>;
-                    })}
-                    </div>
+            <div className="storage-unit">
+                <div className="storage-unit-prefix">Ячейка</div>
+                <div className="storage-unit-container">
+                    <div className="storage-unit-text"><input type="text" name="cell" value={cell} onChange={(e) => setCell(e.target.value)}/></div><img className="storage-unit-arrow"
+                        src="arr-down.png" alt="open" onClick={() => setCellListState(!cellListState)} />
                 </div>
-                <button className="storage__submit">Поиск</button>
-                <div className="blur-fon" style={{width: '100%', height: '100%', position: 'absolute', display: 'none', zIndex: '5'}}>
+                <div className="storage-unit-modal" data-state={cellListState}>
+                {cellList.map(el => {
+                    return <div key={nanoid()}><div className="storage-unit-text storage-unit-modal-row" style={{color: 'rgba(0, 0, 0, 0.8)'}} onClick={() => {setCell(el); setCellListState(false)}}>{el}</div></div>;
+                })}
                 </div>
             </div>
+            {/* <button className="storage__submit">Поиск</button> */}
+            <div className="blur-fon" style={{width: '100%', height: '100%', position: 'absolute', display: 'none', zIndex: '5'}}>
+            </div>
+          </div>
         </div>
 
       );

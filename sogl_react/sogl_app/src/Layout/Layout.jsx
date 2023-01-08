@@ -1,5 +1,5 @@
 import { Outlet, Link } from 'react-router-dom';
-import { InputMoney } from '../InputMoney/InputMoney';
+// import { InputMoney } from '../InputMoney/InputMoney';
 import './Layout.css';
 
 const Layout = () => {
@@ -20,7 +20,7 @@ const Layout = () => {
       </nav>
 
       <Outlet />
-      <InputMoney/>
+      {/* <InputMoney/> */}
 
       
     </>
