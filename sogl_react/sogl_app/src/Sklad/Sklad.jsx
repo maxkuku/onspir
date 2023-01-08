@@ -3,8 +3,7 @@ import "./Sklad.css"
 import { nanoid } from 'nanoid';
 
 
-
-function Sklad() {
+const Sklad = () => {
 
 
 
@@ -23,8 +22,8 @@ function Sklad() {
     const [level, setLevel] = useState("");
     const [cell, setCell] = useState("");
 
-
-    
+    // items view type
+    const [gridView, setGridView] = useState("grid");
 
 
     let skladList = useMemo(() => [], []);
@@ -114,7 +113,7 @@ function Sklad() {
             }
             if(address !== '') {
                 updatedResult = updatedResult.filter((item) => {
-                    return item.address.toLowerCase().indexOf(address.toLowerCase()) !== -1
+                    return item.addr.toLowerCase().indexOf(address.toLowerCase()) !== -1
                 })
             }
             if(sklad !== '') {
@@ -171,8 +170,6 @@ function Sklad() {
       return (
 
 
-
-
         <div className="storageWrap">
 
 
@@ -187,38 +184,41 @@ function Sklad() {
 
                 <div className="group-page_field">
                     <div className="view-screen_field">
-                        <p className="view-screen_field_text">Вид товаров</p>
+                        <p className="view-screen_field_text">Вид позиций</p>
+                        
                         <svg width="19" height="17" viewBox="0 0 19 17"
-                            fill="none" xmlns="http://www.w3.org/2000/svg" className="view-screen_field_icon-active">
-                            <rect width="5" height="5" fill="#928F8F"></rect>
-                            <rect x="7" width="5" height="5" fill="#928F8F"></rect>
-                            <rect x="14" width="5" height="5" fill="#928F8F"></rect>
-                            <rect y="6" width="5" height="5" fill="#928F8F"></rect>
-                            <rect x="7" y="6" width="5" height="5" fill="#928F8F"></rect>
-                            <rect x="14" y="6" width="5" height="5" fill="#928F8F"></rect>
-                            <rect y="12" width="5" height="5" fill="#928F8F"></rect>
-                            <rect x="7" y="12" width="5" height="5" fill="#928F8F"></rect>
-                            <rect x="14" y="12" width="5" height="5" fill="#928F8F"></rect>
+                            onClick={ () => setGridView("grid") }
+                            fill="none" xmlns="http://www.w3.org/2000/svg" className={ gridView === "grid" ? `view-screen_field_icon-active` : `view-screen_field_icon`}>
+                            <rect width="5" height="5"></rect>
+                            <rect x="7" width="5" height="5"></rect>
+                            <rect x="14" width="5" height="5"></rect>
+                            <rect y="6" width="5" height="5"></rect>
+                            <rect x="7" y="6" width="5" height="5"></rect>
+                            <rect x="14" y="6" width="5" height="5"></rect>
+                            <rect y="12" width="5" height="5"></rect>
+                            <rect x="7" y="12" width="5" height="5"></rect>
+                            <rect x="14" y="12" width="5" height="5"></rect>
                         </svg>
                         <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg"
-                            className="view-screen_field_icon">
-                            <rect width="19" height="5" fill="#D9D9D9"></rect>
-                            <rect y="6" width="19" height="5" fill="#D9D9D9"></rect>
-                            <rect y="12" width="19" height="5" fill="#D9D9D9"></rect>
+                            onClick={ () => setGridView("line") }
+                            className={ gridView === "line" ? `view-screen_field_icon-active` : `view-screen_field_icon`}>
+                            <rect width="19" height="5"></rect>
+                            <rect y="6" width="19" height="5"></rect>
+                            <rect y="12" width="19" height="5"></rect>
                         </svg>
                     </div>
-                    <div className="items">
+                    <div className={ gridView === "grid" ? `items grid` : `items line` }>
 
 
                         {items.map((item) => (
 
-<div key={nanoid()} className="item" style={{width: '200px'}} data-pom={item.pom} data-stell={item.stell} data-section={item.section} data-level={item.level} data-cell={item.cell}>
-    <div className="for_item" style={{maxWidth: '200px', height: '140px'}}>
+<div key={nanoid()} className="item" data-pom={item.pom} data-stell={item.stell} data-section={item.section} data-level={item.level} data-cell={item.cell}>
+    <div className="for_item">
     <a href={item.link}>
         <img
             className="for_item-image"
             src="is_image.png"
-            alt="" style={{width: '200px', height: '140px'}} />
+            alt={item.title} />
             </a>
             <svg width="19" height="16"
                 viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="favorites_icon">
@@ -234,7 +234,7 @@ function Sklad() {
                 className="input input__file" />
                 <label htmlFor={`file${item.id}`}
                     className="input__file-img">
-                        <span className="input__file-icon-wrapper">
+                        <span className="input__file-icon-wrapper" title="Загрузить">
                             <img
                         className="input__file-icon"
                         src="def.png"
@@ -247,7 +247,7 @@ function Sklad() {
 </div>
 <p className="item_title">{item.title}</p>
 <div className="item_info"><button className="item_info_button">В корзину</button>
-    <p className="item_info_availability">{item.quan}</p>
+    <p className="item_info_availability" title="Количество">{item.quan}</p>
 </div>
 </div>
 
@@ -376,7 +376,4 @@ function Sklad() {
     }
   }
 
-
-
-
-export default Sklad;
+export default Sklad;   
