@@ -1,0 +1,66 @@
+.tsen_wrapper {
+  margin: 0.4em;
+}
+.tsen_wrapper h2 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #444444;
+  margin: 1em 0 2em;
+  padding-left: 20px;
+}
+.tsen_wrapper .tsen_wrapper__submenu {
+  display: grid;
+  grid-template-columns: -webkit-max-content -webkit-max-content auto 10% 10% 216px;
+  grid-template-columns: max-content max-content auto 10% 10% 216px;
+  padding: 0 20px;
+  grid-template-rows: 55px 1px;
+}
+.tsen_wrapper .tsen_wrapper__submenu .sub-volume-button {
+  display: grid;
+  grid-template-rows: 30px 25px;
+  height: 55px;
+  position: relative;
+}
+.tsen_wrapper .tsen_wrapper__submenu .sub-volume-button .sub-nav-item {
+  padding: 5px 15px;
+  font-size: 14px;
+  align-self: end;
+  cursor: pointer;
+  color: #928F8F;
+}
+.tsen_wrapper .tsen_wrapper__submenu .sub-volume-button .sub-nav-item.active,
+.tsen_wrapper .tsen_wrapper__submenu .sub-volume-button .sub-nav-item:hover {
+  background: linear-gradient(0deg, rgba(130, 130, 130, 0.2), rgba(130, 130, 130, 0) 90%);
+  color: #444444;
+}
+.tsen_wrapper .tsen_wrapper__submenu .sub-volume-button .sub-gradient-shadow {
+  height: 25px;
+}
+.tsen_wrapper .tsen_wrapper__submenu .sub-volume-button .sub-nav-item.active + .sub-gradient-shadow,
+.tsen_wrapper .tsen_wrapper__submenu .sub-volume-button .sub-nav-item:hover + .sub-gradient-shadow {
+  background: linear-gradient(180deg, rgba(130, 130, 130, 0.2), rgba(130, 130, 130, 0) 100%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+}
+.tsen_wrapper .tsen_wrapper__submenu .sub-volume-button.with-image {
+  padding-top: 5px;
+}
+.tsen_wrapper .tsen_wrapper__submenu .sub-volume-button.with-image img {
+  margin-right: 7px;
+}
+.tsen_wrapper .tsen_wrapper__submenu .tsen_wrapper__submenu-search .hidet {
+  background: rgba(164, 164, 172, 0.4) url(../magnifyingglass.svg) no-repeat 10px center/16px 16px;
+  padding: 7px 8px 7px 32px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 22px;
+  height: 32px;
+  box-sizing: border-box;
+  width: 216px;
+}
+.tsen_wrapper .tsen_menu__border {
+  height: 1px;
+  background-color: #d0cfcf;
+  margin: 4px 5em;
+}/*# sourceMappingURL=Tsennosti.css.map */
