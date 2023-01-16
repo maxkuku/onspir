@@ -11,8 +11,8 @@
 }
 .tsen_wrapper .tsen_wrapper__submenu {
   display: grid;
-  grid-template-columns: -webkit-max-content -webkit-max-content auto 10% 10% 216px;
-  grid-template-columns: max-content max-content auto 10% 10% 216px;
+  grid-template-columns: -webkit-max-content -webkit-max-content 10% auto 10% 216px;
+  grid-template-columns: max-content max-content 10% auto 10% 216px;
   padding: 0 20px;
   grid-template-rows: 55px 1px;
 }
@@ -43,10 +43,10 @@
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
           clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
 }
-.tsen_wrapper .tsen_wrapper__submenu .sub-volume-button.with-image {
-  padding-top: 5px;
+.tsen_wrapper .tsen_wrapper__submenu .sub-plain-button.with-image {
+  padding-top: 10px;
 }
-.tsen_wrapper .tsen_wrapper__submenu .sub-volume-button.with-image img {
+.tsen_wrapper .tsen_wrapper__submenu .sub-plain-button.with-image img {
   margin-right: 7px;
 }
 .tsen_wrapper .tsen_wrapper__submenu .tsen_wrapper__submenu-search .hidet {
@@ -63,4 +63,10 @@
   height: 1px;
   background-color: #d0cfcf;
   margin: 4px 5em;
+}
+.tsen_wrapper .tsen_body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  padding: 20px;
 }/*# sourceMappingURL=Tsennosti.css.map */

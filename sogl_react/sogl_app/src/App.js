@@ -9,7 +9,8 @@ import Layout from './Layout/Layout'
 import Sogl from './sogl_form/Sogl';
 import Sklad from './Sklad/Sklad'
 import Nopage from './Nopage/Nopage'
-import Tsennosti from "./Tsennosti/Tsennosti";
+import {Tsennosti} from './Tsennosti/Tsennosti';
+import {Inventar} from './Inventar/Inventar';
 
 
 
@@ -20,7 +21,9 @@ function App() {
         <Route path = "/" element = {<Layout />}>
           <Route path = "sogl" element = {<Sogl />}/> 
           <Route path = "sklad" element = {<Sklad />}/> 
-          <Route path = "tsennosti" element = {<Tsennosti />}/> 
+          <Route path = "tsennosti" element = {<Tsennosti />}>
+            <Route path = "inventar" element = {<Inventar />}/>
+          </Route> 
           <Route path = "*" element = {<Nopage />}/> 
         </Route> 
       </Routes> 
