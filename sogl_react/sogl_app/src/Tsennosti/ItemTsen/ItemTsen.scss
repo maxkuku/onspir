@@ -2,11 +2,17 @@
     padding: 4px 12px;
     background-color: #F0F0F0;
     border-radius: 10px;
+    font-size: 12px;
+    border: 1px solid #444;
 
     .itemTsen__wrap {
         .itemTsen__wrap-headings {
             display: grid;
-            grid-template-columns: 25% 25% 40% 10%;
+            grid-template-columns: 18% 26% 43% 1fr;
+            gap: 4px;
+            font-weight: bold;
+            color: #444;
+            line-height: 22px;
 
             .status {
                 display: inline-block;
@@ -35,29 +41,82 @@
                 justify-content: space-between;
             }
         }
+        .itemTsen__wrap-headings-under {
+            background-color: #cccccc;
+            height: 1px;
+            width: 430px;
+            margin-top: -8px;
+        }
         .itemTsen__wrap-comment {
             font-size: 13px;
             min-height: 55px;
+            margin-top: 5px;
             font-weight: 300;
         }
         .itemTsen__wrap-data {
             display: grid;
-            grid-template-columns: 25% 25% 40% 10%;
+            grid-template-columns: 18% 26% 43% 1fr;
+            gap: 4px;
+            margin-top: 5px;
+            height: 40px;
 
             div {
                 color: #444444;
             }
-
-
-            
         }
 
         .itemTsen__wrap-bottom {
             display: grid;
-            grid-template-columns: 25% 25% 40% 10%;
+            grid-template-columns: 24% 52% 22%;
+            gap: 4px;
             
             .itemTsen__wrap-bottom-date_create {
+                color: #8E8E8E;
+                font-weight: bold;
+                font-size: 14px;
+            }
 
+            .itemTsen__wrap-bottom-item_id {
+                font-size: 14px;
+                color: #8e8e8e;
+                font-weight: bold;
+            }
+        }
+
+        .itemTsen__wrap-data-status {     
+            margin-top: -30px;
+
+
+            .sub-volume-button {
+                display: grid;
+                grid-template-rows: 30px 25px;
+                height: 55px;
+                position: relative;
+    
+                .sub-nav-item {
+                    padding: 5px 15px;
+                    font-size: 14px;
+                    align-self: end;
+                    cursor: pointer;
+                    color: #928F8F;
+                    text-align: center;
+                }
+    
+                .sub-nav-item.active,
+                .sub-nav-item:hover {
+                    background: linear-gradient(0deg, rgba(130, 130, 130, 0.2), rgba(130, 130, 130, 0) 90%);
+                    color: #444444;
+                }
+    
+                .sub-gradient-shadow {
+                    height: 25px;
+                }
+    
+                .sub-nav-item.active + .sub-gradient-shadow, 
+                .sub-nav-item:hover + .sub-gradient-shadow {
+                    background: linear-gradient(180deg, rgba(130, 130, 130, 0.2), rgba(130, 130, 130, 0) 100%);
+                    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+                }
             }
         }
     }

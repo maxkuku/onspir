@@ -11,8 +11,8 @@
 }
 .tsen_wrapper .tsen_wrapper__submenu {
   display: grid;
-  grid-template-columns: -webkit-max-content -webkit-max-content 10% auto 10% 216px;
-  grid-template-columns: max-content max-content 10% auto 10% 216px;
+  grid-template-columns: -webkit-max-content -webkit-max-content 10% auto 5% 216px;
+  grid-template-columns: max-content max-content 10% auto 5% 216px;
   padding: 0 20px;
   grid-template-rows: 55px 1px;
 }
@@ -45,8 +45,15 @@
 }
 .tsen_wrapper .tsen_wrapper__submenu .sub-plain-button.with-image {
   padding-top: 10px;
+  margin-right: 10px;
 }
 .tsen_wrapper .tsen_wrapper__submenu .sub-plain-button.with-image img {
+  margin-right: 7px;
+}
+.tsen_wrapper .tsen_wrapper__submenu .sub-plain-button.with-image-menu {
+  padding-top: 10px;
+}
+.tsen_wrapper .tsen_wrapper__submenu .sub-plain-button.with-image-menu img {
   margin-right: 7px;
 }
 .tsen_wrapper .tsen_wrapper__submenu .tsen_wrapper__submenu-search .hidet {
@@ -59,6 +66,33 @@
   box-sizing: border-box;
   width: 216px;
 }
+.tsen_wrapper .tsen_wrapper__subsubmenu {
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+  gap: 10px;
+  padding: 0 20px;
+  margin-bottom: 3px;
+  font-size: 14px;
+  color: #928F8F;
+  margin-top: 5px;
+}
+.tsen_wrapper .tsen_wrapper__subsubmenu .sub-plain-button.with-image-menu {
+  background-color: #EDEFEF;
+  padding: 2px 8px 4px;
+  border-radius: 7px;
+}
+.tsen_wrapper .tsen_wrapper__subsubmenu .sub-plain-button.with-image-menu select.nonappear {
+  background: transparent url(miniMenu.svg) no-repeat right center/10px 12px;
+  color: #8e8e8e;
+  width: 100%;
+  cursor: pointer;
+}
+.tsen_wrapper .tsen_wrapper__subsubmenu .subsub_point {
+  background-color: #EDEFEF;
+  border-radius: 7px;
+  line-height: 22px;
+  padding: 0 8px;
+}
 .tsen_wrapper .tsen_menu__border {
   height: 1px;
   background-color: #d0cfcf;
@@ -69,4 +103,16 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1em;
   padding: 20px;
+}
+.tsen_wrapper .paginationHereSides {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.tsen_wrapper .paginationHereSides span {
+  border: 1px solid #444;
+  margin: 0 5px;
+  padding: 2px;
+  font-weight: bold;
+  font-size: 18px;
 }/*# sourceMappingURL=Tsennosti.css.map */
