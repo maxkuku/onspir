@@ -13,25 +13,23 @@ export const ItemTsen = ({props}) => {
     const [dalert, setDalert] = useState(0);
     const [dtil, setDtil] = useState(0);
     
-    useEffect(() => {setDnow(new Date().getTime())},[]);
-    useEffect(() => {setDalert(new Date().getTime(dnow - 1 * 24 * 60 * 60))},[dnow]);
+    useEffect(() => {setDnow(new Date().getTime())},[new Date().getTime()]);
     useEffect(() => {setDtil(new Date().getTime(`${props.date_til} ${props.time_til}`))},[props.date_til,props.time_til]);
+    useEffect(() => {setDalert(new Date().getTime(dnow - 2 * 24 * 60 * 60 * 1000))},[dnow]);
 
+    
     // console.log(dnow + ' ' + dtil + ' ' + dalert)
     // dnow + ' ' + dtil + ' ' + dalert
-    // 1674051089802 1674051093473 1674051089806
+    // 1674113641719 1674113582368 1674113641719
     
-    switch(dnow){
-        case dnow > dtil:
-            useEffect(() => {setStatus("red")},[]);
-            break;     
-        case dnow > dalert && dnow < dtil:
-            useEffect(() => {setStatus("yellow")},[]);
-            break; 
-        default:
-            useEffect(() => {setStatus("green")},[]);
-            break;    
-    }
+    
+    useEffect(() => {
+        if(dnow > dtil)
+            setStatus("red")
+        if(dnow<dtil && dnow>dalert)    
+            setStatus("yellow")
+    },[dnow, dtil, dalert]);
+            
     
     return (
         <div key={props.id} className="itemTsen">

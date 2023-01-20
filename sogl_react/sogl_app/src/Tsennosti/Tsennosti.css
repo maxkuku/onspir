@@ -44,8 +44,9 @@
           clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
 }
 .tsen_wrapper .tsen_wrapper__submenu .sub-plain-button.with-image {
-  padding-top: 10px;
+  padding-top: 5px;
   margin-right: 10px;
+  line-height: 21px;
 }
 .tsen_wrapper .tsen_wrapper__submenu .sub-plain-button.with-image img {
   margin-right: 7px;
