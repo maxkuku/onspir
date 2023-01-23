@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { ItemTsen } from "./ItemTsen/ItemTsen";
 import './Tsennosti.css';
 import './tsen.json';
+import { InputPopup } from './InputPopup/InputPopup'
 
 
 
@@ -16,9 +17,17 @@ export const Tsennosti = () => {
     const itemsOnPage = 9;
     const [allPages, setAllPages] = useState(1);
     const [pages, setPages] = useState(1);
+    const [showPop, setShowPop] = useState(false)
+
+
     const calcPagesRange = (tsen, pages, itemsOnPage) => {
         return tsen.slice((pages - 1) * itemsOnPage, pages * itemsOnPage)
     }
+
+
+    const changeState = (data) => {  
+        setShowPop(data); 
+    }; 
 
    
     useEffect(() => {
@@ -57,7 +66,7 @@ export const Tsennosti = () => {
                     <div className="sub-nav-item">Инветарь</div>
                     <div className="sub-gradient-shadow"></div>
                 </NavLink>
-                <div className="sub-plain-button with-image"><img src={'./img/tsen_plus.svg'} alt="Создать"/>Создать передачу</div>
+                <div className="sub-plain-button with-image" onClick={() => changeState() }><img src={'./img/tsen_plus.svg'} alt="Создать"/>Создать передачу</div>
                 <div></div>
                 <div className="sub-plain-button with-image">
                     <select name="filter" className="nonappear" id="filter_option">
@@ -155,23 +164,17 @@ export const Tsennosti = () => {
             </div>
 
             <div className="paginationHereSides">
-            {/* { 
-            Array( Math.ceil(allPages / itemsOnPage) ).fill().map((element, index) => 
-            (
-                <span key={`page_${index}`} className={ (index + 1) === pages ? `active page` : `page` } data-pages={ pages } onClick={() => setPages(index + 1) }>{index + 1}</span>
-            ))
-            } */}
-
-            <img src={`./iosLeft.svg`} width="22" alt="В начало" onClick={() => setPages(1) }/>
-            <img src={`./oneLeft.svg`} width="8" alt="Назад" onClick={() => setPages(pages - 1) }/>
-            <span>{`${pages}/${allPages}`}</span>
-            <img src={`./oneRight.svg`} width="8" alt="Вперед" onClick={() => setPages(pages + 1) }/>
-            <img src={`./iosRight.svg`} width="22" alt="В конец"  onClick={() => setPages(allPages) }/>
-
+                <img src={`./iosLeft.svg`} width="22" alt="В начало" onClick={() => setPages(1) }/>
+                <img src={`./oneLeft.svg`} width="8" alt="Назад" onClick={() => setPages(pages - 1) }/>
+                <span>{`${pages}/${allPages}`}</span>
+                <img src={`./oneRight.svg`} width="8" alt="Вперед" onClick={() => setPages(pages + 1) }/>
+                <img src={`./iosRight.svg`} width="22" alt="В конец"  onClick={() => setPages(allPages) }/>
             </div>
 
 
         </div>
+
+        <InputPopup data={showPop} />
 
         </>
     );
