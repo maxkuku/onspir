@@ -4,14 +4,14 @@ import './InputPopup.css';
 
 
 
-export const InputPopup = (open) => {
+export const InputPopup = () => {
 
     
     
 
     return (
         
-        <div style={{ open }}>
+        <div>
             
             
             <div className="add_remove_wrap">

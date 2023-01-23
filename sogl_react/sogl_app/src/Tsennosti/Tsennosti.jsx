@@ -17,7 +17,7 @@ export const Tsennosti = () => {
     const itemsOnPage = 9;
     const [allPages, setAllPages] = useState(1);
     const [pages, setPages] = useState(1);
-    const [open, setOpen] = useState("display: none");
+    const [open, setOpen] = useState(false);
 
 
     const calcPagesRange = (tsen, pages, itemsOnPage) => {
@@ -75,7 +75,7 @@ export const Tsennosti = () => {
                     <div className="sub-nav-item">Инветарь</div>
                     <div className="sub-gradient-shadow"></div>
                 </NavLink>
-                <div className="sub-plain-button with-image create" onClick={() => setOpen("display: block")}><img src={'./img/tsen_plus.svg'} alt="Создать"/>Создать передачу</div>
+                <div className="sub-plain-button with-image create" onClick={() => setOpen(true)}><img src={'./img/tsen_plus.svg'} alt="Создать"/>Создать передачу</div>
                 <div></div>
                 <div className="sub-plain-button with-image">
                     <select name="filter" className="nonappear" id="filter_option">
@@ -184,10 +184,10 @@ export const Tsennosti = () => {
         </div>
 
         
-        <div className="inputPopupWrapper" style={{ open }}>
+        <div className="inputPopupWrapper" style={ open ? { 'display': 'block' } : { 'display':'none' } }>
             <div className="inputPopup">
                 <div className="popupClose">
-                    <span className="close-icon" onClick={() => setOpen("display: none")}>&times;</span>
+                    <span className="close-icon" onClick={() => setOpen(() => false)}>&times;</span>
                 </div>
                 
                 <InputPopup />

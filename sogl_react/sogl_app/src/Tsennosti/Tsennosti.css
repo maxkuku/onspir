@@ -51,15 +51,15 @@
 .tsen_wrapper .tsen_wrapper__submenu .sub-plain-button.with-image img {
   margin-right: 7px;
 }
-.tsen_wrapper .tsen_wrapper__submenu .create {
-  padding-top: 8px;
-  cursor: pointer;
-}
 .tsen_wrapper .tsen_wrapper__submenu .sub-plain-button.with-image-menu {
   padding-top: 10px;
 }
 .tsen_wrapper .tsen_wrapper__submenu .sub-plain-button.with-image-menu img {
   margin-right: 7px;
+}
+.tsen_wrapper .tsen_wrapper__submenu .sub-plain-button.with-image.create {
+  padding-top: 8px;
+  cursor: pointer;
 }
 .tsen_wrapper .tsen_wrapper__submenu .tsen_wrapper__submenu-search .hidet {
   background: rgba(164, 164, 172, 0.4) url(../magnifyingglass.svg) no-repeat 10px center/16px 16px;
