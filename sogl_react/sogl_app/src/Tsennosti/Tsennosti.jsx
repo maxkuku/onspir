@@ -17,7 +17,7 @@ export const Tsennosti = () => {
     const itemsOnPage = 9;
     const [allPages, setAllPages] = useState(1);
     const [pages, setPages] = useState(1);
-    const [showPop, setShowPop] = useState(false)
+    const [open, setOpen] = useState("display: none");
 
 
     const calcPagesRange = (tsen, pages, itemsOnPage) => {
@@ -25,20 +25,29 @@ export const Tsennosti = () => {
     }
 
 
-    const changeState = (data) => {  
-        setShowPop(data); 
-    }; 
+    const setTsenHandle = (result) => {
+        setTsen( calcPagesRange([...result], pages, itemsOnPage) ); 
+    }
+
+
+    const setAllPagesHandle = (result) => {
+        setAllPages(Math.ceil([...result].length / itemsOnPage));
+    }
+
+
+
 
    
     useEffect(() => {
+        // eslint-disable-next-line no-undef
         fetch("tsen.json")
           .then(res => res.json())
           .then(
             (result) => {  
-                setTsen( calcPagesRange([...result], pages, itemsOnPage) ); 
-                setAllPages(Math.ceil([...result].length / itemsOnPage));
+                setTsenHandle(result);
+                setAllPagesHandle(result);
             })
-        }, [items]);
+        }, [items, pages]);
 
 
 
@@ -66,7 +75,7 @@ export const Tsennosti = () => {
                     <div className="sub-nav-item">Инветарь</div>
                     <div className="sub-gradient-shadow"></div>
                 </NavLink>
-                <div className="sub-plain-button with-image" onClick={() => changeState() }><img src={'./img/tsen_plus.svg'} alt="Создать"/>Создать передачу</div>
+                <div className="sub-plain-button with-image create" onClick={() => setOpen("display: block")}><img src={'./img/tsen_plus.svg'} alt="Создать"/>Создать передачу</div>
                 <div></div>
                 <div className="sub-plain-button with-image">
                     <select name="filter" className="nonappear" id="filter_option">
@@ -174,7 +183,16 @@ export const Tsennosti = () => {
 
         </div>
 
-        <InputPopup data={showPop} />
+        
+        <div className="inputPopupWrapper" style={{ open }}>
+            <div className="inputPopup">
+                <div className="popupClose">
+                    <span className="close-icon" onClick={() => setOpen("display: none")}>&times;</span>
+                </div>
+                
+                <InputPopup />
+            </div>
+        </div>  
 
         </>
     );

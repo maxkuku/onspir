@@ -51,6 +51,10 @@
 .tsen_wrapper .tsen_wrapper__submenu .sub-plain-button.with-image img {
   margin-right: 7px;
 }
+.tsen_wrapper .tsen_wrapper__submenu .create {
+  padding-top: 8px;
+  cursor: pointer;
+}
 .tsen_wrapper .tsen_wrapper__submenu .sub-plain-button.with-image-menu {
   padding-top: 10px;
 }
