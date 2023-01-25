@@ -11,6 +11,7 @@ import Sklad from './Sklad/Sklad'
 import Nopage from './Nopage/Nopage'
 import {Tsennosti} from './Tsennosti/Tsennosti';
 import {Inventar} from './Inventar/Inventar';
+import {Jur} from './Jur/Jur';
 
 
 
@@ -25,6 +26,7 @@ function App() {
             <Route path = "inventar" element = {<Inventar />}/>
           </Route> 
           <Route path = "*" element = {<Nopage />}/> 
+          <Route path = "jur" element = {<Jur />}/> 
         </Route> 
       </Routes> 
     </BrowserRouter>
