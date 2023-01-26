@@ -1,5 +1,5 @@
 import React from "react";
-import InputPopup from './InputPopup/InputPopup'
+//import InputPopup from '../InputPopup/InputPopup'
 import './ItemJur.css';
 
 
@@ -36,9 +36,9 @@ export const ItemJur = ({props}) => {
                     <div className='itemJur__details'>Имя судьи: <span></span>{props.JUDGE_NAME}</div> 
                     <div className='itemJur__details'>Наш сотрудник ведущий дело: <span>{ (props.LAWER_NAME === 1) ? "Петров Иван Петрович" : (props.LAWER_NAME === 2) ? "Семенов Тимофей Валерианович" : "-"}</span></div>
 
-                    <div className='itemJur__details'>Дата начала дела: <span>{ new Date.getTime(props.CR_DATE_FROM) }</span></div>
+                    <div className='itemJur__details'>Дата начала дела: <span>{ new Intl.DateTimeFormat('ru-RU').format(new Date().getTime(props.CR_DATE_FROM)) }</span></div>
 
-                    <div className='itemJur__details'>Дата окончания: <span>{ (props.CR_DATE_TO === "-") ? "В процессе" : new Date.getTime(props.CR_DATE_FROM) }</span></div>
+                    <div className='itemJur__details'>Дата окончания: <span>{ (props.CR_DATE_TO === "-") ? "В процессе" : new Intl.DateTimeFormat('ru-RU').format(new Date().getTime(props.CR_DATE_TO)) }</span></div>
 
                     <div className='itemJur__details'>Комментарий: <span>{props.DESC}</span></div> 
 
@@ -46,10 +46,12 @@ export const ItemJur = ({props}) => {
                 <div className='itemJur__change_wrap'>
                     <div className='itemJur__documents'>{ (props.PACKAGE_ID === "-") ? `Документов нет` : `<a target='_blank' href='/documents/:id'>Пакет документов</a>` }</div>
                     <div className='itemJur__change'>
-                        <InputPopup />
+                        Изменить
                     </div>
                 </div>
             </div>
         </div>
     )
 }
+
+export default ItemJur;

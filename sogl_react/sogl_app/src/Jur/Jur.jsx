@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { ItemJur } from "./ItemJur/ItemJur";
 import './Jur.css';
-import './jur.json';
+import './jurist.json';
 import { InputPopup } from './InputPopup/InputPopup'
 
 //import { openDatabase } from 'react-native-sqlite-storage';
@@ -22,7 +22,7 @@ import { InputPopup } from './InputPopup/InputPopup'
 
 
 
-const Jur = () => {
+export const Jur = () => {
 
     
     const [jur, setJur] = useState([]);
@@ -53,7 +53,7 @@ const Jur = () => {
    
     useEffect(() => {
         // eslint-disable-next-line no-undef
-        fetch("jur.json")
+        fetch("jurist.json")
           .then(res => res.json())
           .then(
             (result) => {  

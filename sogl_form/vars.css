@@ -1,4 +1,4 @@
-:root[data-theme=light] {
+:root[data-theme="light"] {
   --background-color: #f5f5f5;
   --background-loader-color: #2030b8;
   --text-color: #000;
@@ -9,15 +9,15 @@
   --nav-text-color: rgba(105, 98, 98, 0.8);
   --nav-active-text-color: #333;
   --gradient-shadow-background: linear-gradient(
-    0deg,
-    rgba(68, 68, 68, 0.2) 0%,
-    rgba(129, 129, 129, 0) 90%
-  );
+      0deg,
+      rgba(68, 68, 68, 0.2) 0%,
+      rgba(129, 129, 129, 0) 90%
+    );
   --gradient-active-shadow-background: linear-gradient(
-    180deg,
-    rgba(68, 68, 68, 0.2) 0%,
-    rgba(58, 57, 57, 0.012) 85%
-  );
+      180deg,
+      rgba(68, 68, 68, 0.2) 0%,
+      rgba(58, 57, 57, 0.012) 85%
+    );
   --news-title-color: #444444;
   --news-text-color: #000;
   --tasks-title-color: #444444;
@@ -40,15 +40,15 @@
   --active-waves-url: url(../../assets/NewDesign/active-waves-black.svg);
   --waves-color: black;
   --button-bg: radial-gradient(
-    106.45% 2212.37% at 11.94% 32.35%,
-    rgba(68, 68, 68, 0.29) 0%,
-    rgba(68, 68, 68, 0.65) 100%
-  );
+      106.45% 2212.37% at 11.94% 32.35%,
+      rgba(68, 68, 68, 0.29) 0%,
+      rgba(68, 68, 68, 0.65) 100%
+    );
   --button-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
   --font-family-clock: "Advent Pro", sans-serif;
 }
 
-:root[data-theme=dark] {
+:root[data-theme="dark"] {
   --background-color: #0d0f1c;
   --background-loader-color: #fff;
   --text-color: #fff;
@@ -59,15 +59,15 @@
   --nav-text-color: #696262;
   --nav-active-text-color: #d9d9d9;
   --gradient-shadow-background: linear-gradient(
-    0deg,
-    rgba(217, 217, 217, 0.2) 0%,
-    rgba(129, 129, 129, 0) 90%
-  );
+      0deg,
+      rgba(217, 217, 217, 0.2) 0%,
+      rgba(129, 129, 129, 0) 90%
+    );
   --gradient-active-shadow-background: linear-gradient(
-    180deg,
-    rgba(217, 217, 217, 0.2) 0%,
-    rgba(58, 57, 57, 0.012) 85%
-  );
+      180deg,
+      rgba(217, 217, 217, 0.2) 0%,
+      rgba(58, 57, 57, 0.012) 85%
+    );
   --news-title-color: #928f8f;
   --news-text-color: #d9d9d9;
   --tasks-title-color: #c8c2c2;
@@ -75,10 +75,10 @@
   --tasks-checked-color: #928f8f;
   --tasks-mobile-bg-color: rgb(76 72 72 / 38%);
   --tasks-mobile-calendar-icon-bg: radial-gradient(
-    84.29% 104.49% at 20% 15.71%,
-    #dde1e1 0%,
-    rgba(250, 255, 255, 0) 100%
-  );
+      84.29% 104.49% at 20% 15.71%,
+      #dde1e1 0%,
+      rgba(250, 255, 255, 0) 100%
+    );
   --rating-range-slider-color: #d9d9d9;
   --rating-range-like-icon: url("../../assets/NewDesign/rating/like-dark.svg");
   --rating-range-star-icon: url("../../assets/NewDesign/rating/star-dark.svg");
@@ -93,10 +93,11 @@
   --active-waves-url: url(../../assets/NewDesign/active-waves-white.svg);
   --waves-color: white;
   --button-bg: radial-gradient(
-    106.45% 2212.37% at 11.94% 32.35%,
-    rgba(255, 255, 255, 0.85) 0%,
-    rgba(217, 217, 217, 0.68) 100%
-  );
+      106.45% 2212.37% at 11.94% 32.35%,
+      rgba(255, 255, 255, 0.85) 0%,
+      rgba(217, 217, 217, 0.68) 100%
+    );
   --button-box-shadow: 0px 4px 6px #797979;
   --font-family-clock: "Advent Pro", sans-serif;
-}/*# sourceMappingURL=vars.css.map */
+}
+/*# sourceMappingURL=vars.css.map */

@@ -74,3 +74,4 @@ export const InputPopup = () => {
     )
 }
 
+export default InputPopup

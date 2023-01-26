@@ -14,9 +14,9 @@
 .tsen_wrapper .tsen_wrapper__submenu {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: max-content max-content 10% auto 5% 216px;
-      grid-template-columns: -webkit-max-content -webkit-max-content 10% auto 5% 216px;
-      grid-template-columns: max-content max-content 10% auto 5% 216px;
+  -ms-grid-columns: max-content max-content max-content max-content auto 5% 216px;
+      grid-template-columns: -webkit-max-content -webkit-max-content -webkit-max-content -webkit-max-content auto 5% 216px;
+      grid-template-columns: max-content max-content max-content max-content auto 5% 216px;
   padding: 0 20px;
   -ms-grid-rows: 55px 1px;
       grid-template-rows: 55px 1px;
@@ -160,4 +160,4 @@
   font-weight: bold;
   font-size: 18px;
 }
-/*# sourceMappingURL=Tsennosti.css.map */
+/*# sourceMappingURL=Jur.css.map */
