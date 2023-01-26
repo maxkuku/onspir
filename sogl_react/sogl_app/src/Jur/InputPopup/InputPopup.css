@@ -1,0 +1,154 @@
+.inputPopupWrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #B8B6B6;
+  background: radial-gradient(114.38% 114.38% at 11.18% 14.38%, rgba(217, 226, 227, 0.44) 0%, rgba(255, 255, 255, 0.51) 100%);
+  -webkit-backdrop-filter: blur(4.5px);
+          backdrop-filter: blur(4.5px);
+}
+.inputPopupWrapper .inputPopup {
+  position: absolute;
+  width: 80%;
+  max-width: 562px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #eaeeee;
+  border: 0.2px solid #B8B6B6;
+  box-shadow: 0px 4px 4px rgba(121, 112, 112, 0.25);
+  border-radius: 10px;
+  padding: 14px 9px;
+}
+.inputPopupWrapper .inputPopup .close-icon {
+  color: #444;
+  font-size: 40px;
+}
+.inputPopupWrapper .inputPopup .popupClose {
+  display: block;
+  left: 96%;
+  position: relative;
+  color: #757575;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+  width: 24px;
+}
+.inputPopupWrapper .inputPopup .add_remove_wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.inputPopupWrapper .inputPopup .add_remove_wrap .cancel {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 17px;
+  color: #B90C0C;
+  cursor: pointer;
+  margin-bottom: 17px;
+}
+.inputPopupWrapper .inputPopup .add_remove_wrap .add {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 17px;
+  color: #928F8F;
+  text-align: right;
+  cursor: pointer;
+  margin-bottom: 17px;
+}
+.inputPopupWrapper .inputPopup .agree_add .subtitle {
+  text-align: center;
+  margin: 10px auto 30px;
+  display: block;
+}
+.inputPopupWrapper .inputPopup .agree_add span {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #444444;
+}
+.inputPopupWrapper .inputPopup .agree_add .by_sides {
+  display: flex;
+  justify-content: space-between;
+}
+.inputPopupWrapper .inputPopup .agree_add .by_sides span {
+  background-color: #fff;
+  padding: 3px 25px 6px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.inputPopupWrapper .formAdd .fieldWrapper {
+  background-color: #fff;
+  min-height: 38px;
+  width: 100%;
+  border-radius: 7px;
+  margin-bottom: 5px;
+}
+.inputPopupWrapper .formAdd .fieldWrapper input {
+  width: calc(100% - 34px);
+  line-height: 38px;
+  padding: 0 10px;
+  border-radius: 7px;
+}
+.inputPopupWrapper .formAdd .fieldWrapper textarea {
+  width: calc(100% - 34px);
+  border-radius: 7px;
+  padding: 10px;
+  resize: none;
+}
+.inputPopupWrapper .formAdd .fieldWrapper input[name=date] {
+  width: calc(100% - 190px);
+}
+.inputPopupWrapper .formAdd .fieldWrapper .storage-unit-modal {
+  display: none;
+}
+.inputPopupWrapper .formAdd .fieldWrapper .date {
+  background: #EDEFEF;
+  border-radius: 7px;
+  font-size: 13px;
+  line-height: 15px;
+  padding: 4px 11px;
+  margin-right: 5px;
+}
+.inputPopupWrapper .formAdd .fieldWrapper .time {
+  background: #EDEFEF;
+  border-radius: 7px;
+  font-size: 13px;
+  line-height: 15px;
+  padding: 4px 11px;
+}
+.inputPopupWrapper .formAdd .fieldWrapper.area {
+  margin-top: 16px;
+}
+.inputPopupWrapper .formAdd .bez_sroka {
+  text-align: right;
+  color: #928F8F;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.inputPopupWrapper .formAdd .bez_sroka .text {
+  margin-right: 10px;
+}
+.inputPopupWrapper .formAdd .bez_sroka .pointWrapper {
+  width: 47px;
+  height: 23px;
+  background: #444444;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+  transition: 0.3s;
+}
+.inputPopupWrapper .formAdd .bez_sroka .pointWrapper span {
+  width: 19px;
+  height: 19px;
+  display: inline-block;
+  background: #FFFFFF;
+  border-radius: 50%;
+}
+.inputPopupWrapper .formAdd .bez_sroka .pointWrapper.on {
+  background-color: rgb(31, 156, 0);
+  justify-content: flex-end;
+}/*# sourceMappingURL=InputPopup.css.map */
