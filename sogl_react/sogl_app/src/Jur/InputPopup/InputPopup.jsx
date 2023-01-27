@@ -4,7 +4,7 @@ import './InputPopup.css';
 
 
 
-export const InputPopup = () => {
+export const InputPopup = (props) => {
 
     
     
@@ -16,11 +16,12 @@ export const InputPopup = () => {
             
             <div className="add_remove_wrap">
                 <div className='cancel'>Отменить</div>
+                <div className='name'>{props.CR_NAME}</div>
                 <div className='add'>Добавить</div>
             </div>
             <form id="add_thing" className='formAdd'>
                 <div className='fieldWrapper'>
-                    <input type="text" name="poluch" value="" placeholder="Получатель" />
+                    <input type="text" name="company" defaultValue={props.COMPANY} placeholder="Компания" />
                     <img className="storage-unit-arrow" src="../arrDown.svg" alt="open"/>
                     <div className="storage-unit-modal">
                         <div className="storage-unit-text storage-unit-modal-row"></div>
@@ -28,12 +29,13 @@ export const InputPopup = () => {
                 </div>
 
                 <div className='fieldWrapper'>
-                    <input type="text" name="inits" value="" placeholder="Инициатор" />
+                    <input type="text" name="opponent" defaultValue={props.OPPONENT} placeholder="Оппонент" />
                     <img className="storage-unit-arrow" src="../arrDown.svg" alt="open"/>
                     <div className="storage-unit-modal">
                         <div className="storage-unit-text storage-unit-modal-row"></div>
                     </div>
                 </div>
+
                 <div className='fieldWrapper'>
                     <input type="text" name="tmc" value="" placeholder="ТМЦ" />
                     <img className="storage-unit-arrow" src="../arrDown.svg" alt="open"/>
